@@ -18,9 +18,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Prepare site
+        run: |
+          mkdir -p site/assets
+          cp index.html robots.txt README.md site/
+          cp assets/mark.svg site/assets/
+          python3 - <<'PY'
+          from pathlib import Path
+          import base64
+          src = Path("assets-b64")
+          if src.exists():
+              for p in src.glob("*.b64"):
+                  name = p.name[:-4]
+                  out = Path("site/assets") / name
+                  out.write_bytes(base64.b64decode("".join(p.read_text().split())))
+                  print("wrote", out, out.stat().st_size)
+          PY
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: "."
+          path: site
       - id: deployment
         uses: actions/deploy-pages@v4
