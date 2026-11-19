@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AIQbiz — AI Influencer Build Lab, Founding Edition</title>
+  <meta name="description" content="A practical, one-time course for building a consistent AI creator you can use in your business. $97. BUILD is available now.">
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+:root {
+  --paper: #f4f3ef;
+  --ink: #20211f;
+  --red: #bd382e;
+  --line: #c9c8c1;
+  --muted: #50514b;
+  --surface: #e9e8e1;
+  --sans: "DM Sans", Arial, sans-serif;
+  --display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --serif: "Instrument Serif", Georgia, serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 17px/1.65 var(--sans); }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; cursor: pointer; border: 0; background: none; }
+img { display: block; width: 100%; height: auto; }
+figure { margin: 0; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button:focus-visible, a:focus-visible, summary:focus-visible { outline: 2px solid var(--red); outline-offset: 4px; }
+::selection { background: var(--red); color: #fff; }
+.page-width { width: calc(100% - 112px); max-width: 1360px; margin: 0 auto; }
+.skip-link { position: absolute; left: 16px; top: -80px; z-index: 50; background: #fff; padding: 10px; }
+.skip-link:focus { top: 12px; }
+
+@media (max-width: 1080px) {
+  .page-width { width: calc(100% - 64px); }
+  .site-header { gap: 18px; }
+  .site-header nav { gap: 17px; font-size: 14px; }
+  h1 { font-size: clamp(48px, 7.4vw, 78px); }
+  .problem-layout, .build-intro, .work-intro, .motion-title, .course-layout, .faq-layout, .access-layout, .process-heading { grid-template-columns: 1fr; gap: 22px; }
+  .build-steps li { grid-template-columns: 36px 1fr; }
+  .build-steps b { grid-column: 2; }
+  .build-steps p { grid-column: 2; }
+  .offer { padding-left: 0; border-left: 0; border-top: 1px solid var(--ink); padding-top: 28px; }
+}
+@media (max-width: 700px) {
+  body { font-size: 16px; padding-bottom: 78px; }
+  .page-width { width: calc(100% - 40px); }
+  .site-header { min-height: 72px; gap: 12px; }
+  .wordmark { font-size: 32px; }
+  .site-header nav { display: none; }
+  .header-action { padding: 11px 12px; font-size: 14px; }
+  .hero { grid-template-columns: 1fr; gap: 18px; padding-top: 28px; }
+  .hero-copy { display: contents; }
+  .hero-copy > .eyebrow { grid-row: 1; }
+  .hero-copy > h1 { grid-row: 2; margin: 0; }
+  .hero-copy > .hero-description { grid-row: 3; }
+  .hero-copy > .hero-price { grid-row: 4; }
+  .hero-copy > .hero-actions { grid-row: 5; }
+  .hero-editorial { grid-row: 6; }
+  .hero-copy > .hero-detail { grid-row: 7; }
+  .hero-copy > .hero-note { grid-row: 8; }
+  .hero-copy > .audience-note { grid-row: 9; }
+  .hero-foot { grid-row: 10; }
+  h1 { font-size: clamp(46px, 13vw, 64px); line-height: .9; }
+  .hero-description { margin: 0; font-size: 20px; }
+  .hero-detail, .hero-note { margin: 0; }
+  .hero-actions { max-width: none; }
+  .button { min-height: 54px; width: 100%; font-size: 16px; }
+  .hero-price > strong { font-size: 54px; }
+  .hero-main img { aspect-ratio: 1.45; }
+  .hero-foot { align-items: start; font-size: 12px; line-height: 1.5; }
+  .section-index { flex-direction: column; align-items: flex-start; gap: 6px; font-size: 12px; line-height: 1.5; }
+  .section-index span:last-child { text-align: left; max-width: none; }
+  h2 { font-size: 48px; }
+  .problem, .work-section { padding: 48px 0 24px; }
+  .problem-list p { font-size: 18px; }
+  .build-steps b { font-size: 22px; }
+  .case-studies, .audience-grid, .ethan-method, .process-panel { grid-template-columns: 1fr; gap: 28px; }
+  .audience-col, .audience-col + .audience-col { padding: 0; border-left: 0; }
+  .audience-col + .audience-col { padding-top: 28px; border-top: 1px solid var(--ink); }
+  .case-info h3 { font-size: 32px; }
+  .process-tabs { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .process-tabs button { font-size: 18px; }
+  .prompt-note { grid-template-columns: 1fr; }
+  .prompt-note p { font-size: 24px; }
+  .module-list summary { grid-template-columns: 28px 1fr auto 14px; gap: 8px; }
+  .roadmap { flex-wrap: wrap; }
+  .roadmap > .file-label { flex-basis: 100%; }
+  .access-layout h2 { font-size: 48px; }
+  .offer .offer-price { font-size: 72px; }
+  .site-footer { grid-template-columns: 1fr auto; gap: 16px; }
+  .site-footer nav { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 12px 18px; }
+  .mobile-cta { display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; padding: 10px 20px calc(10px + env(safe-area-inset-bottom)); background: var(--paper); border-top: 1px solid var(--ink); }
+  .mobile-cta.is-visible { display: block; }
+  .mobile-cta .button { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header page-width">
+    <a class="wordmark" href="#top" aria-label="AIQbiz home"><span>aiq</span><span class="wordmark-biz">biz<span class="mark-dot"></span></span></a>
+    <nav aria-label="Main navigation">
+      <a href="#problem">The problem</a>
+      <a href="#work">The work</a>
+      <a href="#course">The course</a>
+      <a href="#questions">Questions</a>
+    </nav>
+    <a class="header-action" href="#access">Join · $97</a>
+  </header>
+
+  <main id="main">
+    <section class="hero page-width" id="top" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="red-square" aria-hidden="true"></span>AI Influencer Build Lab · Founding Edition</p>
+        <h1 id="hero-title">Build one AI creator you can actually use in your <em>business.</em></h1>
+        <p class="hero-description">A practical, one-time course: plan a character, keep the face consistent, and turn images into publishable video.</p>
+        <p class="hero-detail">Real prompts, exact settings, and two documented AI case studies — including what went wrong.</p>
+        <div class="hero-price">
+          <strong>$97</strong>
+          <div><b>USD · one payment</b><span>No monthly fee. No expiry date on this course.</span></div>
+        </div>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#access">Join the Founding Edition — $97</a>
+          <a class="button button-secondary" href="#course">Start free with modules 1–3</a>
+        </div>
+        <p class="hero-note">BUILD is available now. GROW and MONETIZE come later, once tested. No date is promised.</p>
+        <p class="audience-note">For digital solopreneurs and self-employed professionals. Tool accounts and credits are separate.</p>
+      </div>
+      <div class="hero-editorial">
+        <div class="editorial-heading"><span>From the working files</span><span>Ava / 001</span></div>
+        <figure class="hero-main">
+          <img src="assets/ava-studio.jpg" alt="Ava Pearson, an AI-generated course character, working in a studio" width="1440" height="811">
+          <figcaption><span>Ava Pearson</span><span>AI-generated character · real course work</span></figcaption>
+        </figure>
+        <div class="hero-strip">
+          <figure>
+            <img src="assets/ava-hair-drift.jpg" alt="Ava identity test where the hair drifted from the reference" width="848" height="568">
+            <figcaption>01 / The identity drifts</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/ava-hair-corrected.jpg" alt="Corrected Ava reference with the intended bob and bangs" width="786" height="524">
+            <figcaption>02 / Refine the reference</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="hero-foot">
+        <span>Real prompts. Actual settings. Experiments included.</span>
+        <a href="#work">See the working files ↓</a>
+      </div>
+    </section>
+
+    <section class="problem page-width" id="problem" aria-labelledby="problem-title">
+      <div class="section-index"><span>The problem</span><span>Before there is a creator</span></div>
+      <div class="problem-layout">
+        <h2 id="problem-title">A striking image is easy.<br><em>A creator is not.</em></h2>
+        <ol class="problem-list">
+          <li><span>01</span><p>Tools and tutorials pile up, but the next image looks like a different person.</p></li>
+          <li><span>02</span><p>Clips look “AI”: no consistent face, no camera intention, no brief.</p></li>
+          <li><span>03</span><p>Monetization advice arrives before you have anything an audience could recognize.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="build page-width" id="build" aria-labelledby="build-title">
+      <div class="section-index"><span>What you build</span><span>No prior AI-creator experience required</span></div>
+      <div class="build-intro">
+        <h2 id="build-title">A face you can<br><em>carry forward.</em></h2>
+        <p>You leave with a planned character, a Soul ID, images you meant to make, and video you can direct. Tool accounts and credits are separate.</p>
+      </div>
+      <ol class="build-steps">
+        <li><span>01</span><b>Plan the creator</b><p>Purpose, audience, and look, written down before you generate.</p></li>
+        <li><span>02</span><b>Train a Soul ID</b><p>The same face, across scenes, styles, and camera angles.</p></li>
+        <li><span>03</span><b>Get the image you meant</b><p>Choose the model, write the prompt, and fix the usual “this looks AI” problems.</p></li>
+        <li><span>04</span><b>Direct the video</b><p>Camera movement, genre, and cuts that serve the story.</p></li>
+        <li><span>05</span><b>Work from evidence</b><p>Prompt, settings, result, and the one change you test next.</p></li>
+      </ol>
+    </section>
+
+    <section class="work-section page-width" id="work" aria-labelledby="work-title">
+      <div class="section-index"><span>01 / The working files</span><span>Proof, not the hook</span></div>
+      <div class="work-intro">
+        <h2 id="work-title">Two characters.<br><em>Two ways to think.</em></h2>
+        <p>Ava Pearson and Ethan Cole are AI-generated hosts and documented production case studies — not customer testimonials, and not a promise of income or reach.</p>
+      </div>
+      <div class="case-studies">
+        <article class="case-study">
+          <figure>
+            <img src="assets/ava-portrait.jpg" alt="Ava Pearson, an AI-generated course case-study character" width="752" height="1344">
+          </figure>
+          <div class="case-info">
+            <span class="file-label">File A / Ava Pearson</span>
+            <h3>The discovery path.</h3>
+            <p>A strong unplanned image, refined into a repeatable creator.</p>
+          </div>
+        </article>
+        <article class="case-study case-ethan">
+          <figure>
+            <img src="assets/ethan-portrait.jpg" alt="Ethan Cole, an AI-generated course case-study character, clean reference portrait" width="773" height="663">
+          </figure>
+          <div class="case-info">
+            <span class="file-label">File E / Ethan Cole</span>
+            <h3>The design path.</h3>
+            <p>Concept and personality first, then the face.</p>
+          </div>
+        </article>
+      </div>
+      <div class="ethan-method">
+        <div class="ethan-method-heading">
+          <span class="file-label">Inside Ethan’s case study</span>
+          <h3>A character is a sequence of decisions.</h3>
+          <p>The course begins with the person Ethan should feel like — then uses the first image to test identity, not to chase a perfect scene.</p>
+        </div>
+        <ol class="ethan-steps">
+          <li><span>01</span><div><b>Define the person</b><p>Calm confidence, intelligence and authority — without arrogance or hype.</p></div></li>
+          <li><span>02</span><div><b>Borrow qualities, not identities</b><p>Study attributes such as presence and clarity; combine them into a new character rather than copying one reference.</p></div></li>
+          <li><span>03</span><div><b>Test the face first</b><p>Check whether the reference image feels like Ethan. Background and lighting can be refined afterwards.</p></div></li>
+        </ol>
+      </div>
+      <p class="small-note">A worked video example in the course, Ava Walks Through the Worlds, keeps the prompt, the settings, and what actually drifted.</p>
+    </section>
+
+    <section class="process-section" id="process" aria-labelledby="process-title">
+      <div class="page-width">
+        <div class="section-index"><span>02 / The method</span><span>From a brief to the next test</span></div>
+        <div class="process-heading">
+          <h2 id="process-title">The image is<br><em>not the whole job.</em></h2>
+          <p>Click through the decisions behind the work. No magic prompt. No skipped steps.</p>
+        </div>
+        <div class="process-tabs" role="tablist" aria-label="Creator workflow">
+          <button type="button" role="tab" id="tab-0" aria-selected="true" aria-controls="process-panel" data-step="0"><span>01</span>Brief</button>
+          <button type="button" role="tab" id="tab-1" aria-selected="false" aria-controls="process-panel" data-step="1" tabindex="-1"><span>02</span>Identity</button>
+          <button type="button" role="tab" id="tab-2" aria-selected="false" aria-controls="process-panel" data-step="2" tabindex="-1"><span>03</span>Image</button>
+          <button type="button" role="tab" id="tab-3" aria-selected="false" aria-controls="process-panel" data-step="3" tabindex="-1"><span>04</span>Motion</button>
+          <button type="button" role="tab" id="tab-4" aria-selected="false" aria-controls="process-panel" data-step="4" tabindex="-1"><span>05</span>Test</button>
+          <button type="button" role="tab" id="tab-5" aria-selected="false" aria-controls="process-panel" data-step="5" tabindex="-1"><span>06</span>Correction</button>
+        </div>
+        <div class="process-panel" id="process-panel" role="tabpanel" aria-labelledby="tab-0">
+          <div class="process-notes">
+            <span class="file-label" id="step-label">Working note / 01</span>
+            <h3 id="step-title">Decide who you’re making.</h3>
+            <p id="step-description">Define the purpose, audience, positioning and voice. A creator brief gives every later image a reason to exist.</p>
+            <p class="step-artifact" id="step-artifact">In the course: Plan Your Creator + Your Creator Brief.</p>
+          </div>
+          <figure class="process-image">
+            <img id="step-image" src="assets/creator-brief.jpg" alt="Your Creator Brief, original course material" width="1200" height="679">
+            <figcaption id="step-caption">Your Creator Brief / original course material</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="motion-section page-width" id="example" aria-labelledby="motion-title-h">
+      <div class="section-index"><span>03 / A worked example</span><span>Ava Walks Through the Worlds</span></div>
+      <div class="motion-title">
+        <h2 id="motion-title-h">One face.<br><em>Several worlds.</em></h2>
+        <p>A real lesson: hold one character’s identity while the setting, camera and movement change. The still and the prompt below are from the original 30-second course example.</p>
+      </div>
+      <figure class="film-view">
+        <img src="assets/ava-worlds-still.jpg" alt="Still from Ava Walks Through the Worlds, the AIQbiz course example" width="1200" height="685">
+        <figcaption><span>Ava / the video exercise</span><span>30 seconds · original course example</span></figcaption>
+      </figure>
+      <div class="prompt-note">
+        <div>
+          <span class="file-label">From the original prompt</span>
+          <p>“The camera starts as a wide shot, then follows her at walking pace for the rest of the film. Cuts only happen at a clear facial expression or an important action.”</p>
+        </div>
+      </div>
+      <details class="prompt-box">
+        <summary>Open the working prompt</summary>
+        <p class="small-note">Start image as Image 1 + @Ava Soul ID. Seedance 2.5. 30 seconds, 16:9, 720p, sound on. Settings from the course example — not a claim about current provider pricing.</p>
+        <pre>Start from @Image 1. @Ava in the image is the only character; keep her face, golden blonde bob with full bangs, cream halter top, black jeans and sage-green sneakers consistent in every shot. The camera starts as a wide shot, then follows her at walking pace for the rest of the film. Cuts only happen at a clear facial expression or an important action. Cinematic, photorealistic, natural motion, no text.
+
+Every portal looks exactly the same: a doorway-sized ring of glowing orange sparks, sparks flying off its edge, and through it the next world is already visible, like looking through a window. She always walks through the portal.
+
+0-5s: @Ava types on her laptop in the loft studio. Behind her, on the empty floor area at the right of the frame, the first portal opens, and a sunlit green valley is visible inside it. She notices the glow, turns toward it, and steps through.
+
+5-10s: She walks through the green valley with deer and birds. Close-up of her face: amazed and delighted. Ahead of her, a new portal opens, and through it a battlefield with explosions is visible.
+
+10-15s: She steps through into the battlefield. An explosion sends debris over her head and she ducks. Cut to her startled face. A new portal opens ahead, and through it a huge dragon flies over a fantasy castle.
+
+15-20s: She steps into the fantasy landscape. The dragon flies low overhead. Cut to her face looking up in awe. A new portal opens ahead, and through it a black-and-white world is visible.
+
+20-24s: She steps into the black-and-white world and is the only thing in color, curious and playful. A last portal opens ahead, and through it a quiet beach at golden hour is visible.
+
+24-30s: She steps out onto the beach and walks to the water’s edge. She sits down in the sand and looks out over the sea with a content smile. The camera settles slowly beside her. End on a calm, still image.</pre>
+        <p class="small-note">A prompt is an instruction, not a guarantee that every detail will be followed. The lesson includes the generated result and the next test.</p>
+      </details>
+    </section>
+
+    <section class="course-section page-width" id="course" aria-labelledby="course-title">
+      <div class="section-index"><span>04 / The course</span><span>Six modules · BUILD available now</span></div>
+      <div class="course-layout">
+        <div class="course-copy">
+          <h2 id="course-title">A place<br><em>to do the work.</em></h2>
+          <p>Modules 1–3 start free. The Founding Edition unlocks module 4 onward. Follow the prompts, controls and practical decisions — including the attempts that needed another pass.</p>
+        </div>
+        <div class="module-list">
+          <details>
+            <summary><span class="module-number">01</span><span class="module-name">Welcome to AIQbiz</span><span class="module-access">Free</span><span aria-hidden="true">+</span></summary>
+            <ul class="module-lessons"><li>Orientation, tools, and how the lab works.</li></ul>
+          </details>
+          <details>
+            <summary><span class="module-number">02</span><span class="module-name">The AI Creator Landscape</span><span class="module-access">Free</span><span aria-hidden="true">+</span></summary>
+            <ul class="module-lessons"><li>Where AI stands, language models, and Higgsfield.</li></ul>
+          </details>
+          <details>
+            <summary><span class="module-number">03</span><span class="module-name">Your First Build</span><span class="module-access">Free</span><span aria-hidden="true">+</span></summary>
+            <ul class="module-lessons"><li>Brief, base image, Soul ID, plus Ava and Ethan’s production paths.</li></ul>
+          </details>
+          <details>
+            <summary><span class="module-number">04</span><span class="module-name">What Your Soul ID Can Do</span><span class="module-access">Founding Edition</span><span aria-hidden="true">+</span></summary>
+            <ul class="module-lessons"><li>Put the character in any scene, style, and camera angle. Includes 33 moodboards.</li></ul>
+          </details>
+          <details>
+            <summary><span class="module-number">05</span><span class="module-name">Getting the Image You Want</span><span class="module-access">Founding Edition</span><span aria-hidden="true">+</span></summary>
+            <ul class="module-lessons"><li>Models, prompts, why it looks “AI,” and the Strategy Toolbox.</li></ul>
+          </details>
+          <details>
+            <summary><span class="module-number">06</span><span class="module-name">The Language of Video</span><span class="module-access">Founding Edition</span><span aria-hidden="true">+</span></summary>
+            <ul class="module-lessons"><li>First clip, camera, genres, cutting, and the Ava Walks Through the Worlds example.</li></ul>
+          </details>
+        </div>
+      </div>
+      <div class="roadmap">
+        <span class="file-label">The development path</span>
+        <div><strong>BUILD</strong><span>Available now</span></div>
+        <div><strong>GROW</strong><span>Included when added. Not live yet. No date.</span></div>
+        <div><strong>MONETIZE</strong><span>Included when added. Not live yet. No date.</span></div>
+      </div>
+    </section>
+
+    <section class="audience page-width" id="audience" aria-labelledby="audience-title">
+      <div class="section-index"><span>Who it’s for</span><span>And who it isn’t</span></div>
+      <h2 id="audience-title" class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Who it’s for</h2>
+      <div class="audience-grid">
+        <div class="audience-col">
+          <h3>For you if</h3>
+          <ul>
+            <li>You are a digital solopreneur who wants a consistent, faceless AI creator you can publish — and later grow and monetize.</li>
+            <li>You will write a brief, run tests, and keep a short log.</li>
+            <li>You accept that BUILD is available now, and later stages arrive when they are ready.</li>
+          </ul>
+        </div>
+        <div class="audience-col not">
+          <h3>Not for you if</h3>
+          <ul>
+            <li>You want guaranteed income, a following, or a done-for-you influencer.</li>
+            <li>You only want a prompt pack, or you need GROW and MONETIZE on day one.</li>
+            <li>This is a private, non-business purchase, or you want adult or lookalike-of-a-real-person work.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section page-width" id="questions" aria-labelledby="questions-title">
+      <div class="section-index"><span>05 / Questions</span><span>Clear before you join</span></div>
+      <div class="faq-layout">
+        <div>
+          <h2 id="questions-title">Good questions<br><em>first.</em></h2>
+          <p>What you get, what is available today, and what sits outside the course.</p>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>What do I get for $97?<span aria-hidden="true">+</span></summary>
+            <p>Paid BUILD from module 4 onward, plus later modules added to this course. Modules 1–3 also start free.</p>
+          </details>
+          <details>
+            <summary>What is available now?<span aria-hidden="true">+</span></summary>
+            <p>BUILD. GROW and MONETIZE are not live yet, and no date is promised.</p>
+          </details>
+          <details>
+            <summary>Do I need to show my face?<span aria-hidden="true">+</span></summary>
+            <p>No. You build an AI-generated creator and label it as AI.</p>
+          </details>
+          <details>
+            <summary>Do I need Higgsfield?<span aria-hidden="true">+</span></summary>
+            <p>Yes for the source workflows (images, video, Soul ID). Tool costs are separate and can change; check the provider before you subscribe. ElevenLabs is optional for a designed voice.</p>
+          </details>
+          <details>
+            <summary>Is there a money-back guarantee?<span aria-hidden="true">+</span></summary>
+            <p>No voluntary refund is offered. If access is broken, email team@aiqbiz.com. Mandatory legal rights still apply.</p>
+          </details>
+          <details>
+            <summary>Who is behind this?<span aria-hidden="true">+</span></summary>
+            <p>Puranutris LLC, a Wyoming limited liability company. Contact: team@aiqbiz.com. The course is offered to business customers.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="access-section" id="access" aria-labelledby="access-title">
+      <div class="page-width">
+        <div class="section-index"><span>06 / Founding Edition</span><span>One payment · this course</span></div>
+        <div class="access-layout">
+          <div>
+            <h2 id="access-title">Start with the<br><em>first build.</em></h2>
+            <p>$97 one-time, or start modules 1–3 free. This is an educational course. No earnings claims.</p>
+            <p class="founder-note">The first 300 founding members are tracked manually. There is no public counter and no timer. The price may rise later; existing access stays.</p>
+          </div>
+          <div class="offer">
+            <span class="file-label">AI Influencer Build Lab / Founding Edition</span>
+            <p class="offer-price">$97<span>USD · one payment · no expiry on this course</span></p>
+            <ul>
+              <li>Available now: BUILD. Paid modules from 4 onward. Modules 1–3 also start free.</li>
+              <li>Included when added: later modules in this course, including GROW and MONETIZE, plus updates when tools change. No date.</li>
+              <li>Not included: tool credits, coaching, income results, or a release date for later stages.</li>
+            </ul>
+            <a class="button button-primary" href="#access">Join the Founding Edition — $97</a>
+            <a class="button button-secondary" href="#course">Start free with modules 1–3</a>
+            <p class="offer-note">Preview only — buttons on this file do not take payment. Ava and Ethan are AI-generated case-study hosts, not customer proof.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer page-width">
+    <a class="wordmark" href="#top" aria-label="AIQbiz home"><span>aiq</span><span class="wordmark-biz">biz<span class="mark-dot"></span></span></a>
+    <p>AIQbiz is a project of Puranutris LLC.<br>For business customers. An educational course, not a software subscription.</p>
+    <nav aria-label="Legal and contact">
+      <a href="https://www.aiqbiz.com/imprint">Imprint</a>
+      <a href="https://www.aiqbiz.com/privacy">Privacy</a>
+      <a href="https://www.aiqbiz.com/terms">Terms</a>
+      <a href="https://www.aiqbiz.com/contact">Contact</a>
+    </nav>
+  </footer>
+
+  <div class="mobile-cta">
+    <a class="button button-primary" href="#access">Join the Founding Edition — $97</a>
+  </div>
+
+  <script>
+    const steps = [
+      { title: "Decide who you’re making.", description: "Define the purpose, audience, positioning and voice. A creator brief gives every later image a reason to exist.", artifact: "In the course: Plan Your Creator + Your Creator Brief.", image: "assets/creator-brief.jpg", caption: "Your Creator Brief / original course material" },
+      { title: "Give the character a reference.", description: "Build a base image and train a Soul ID. You need a visual identity you can carry into different scenes — not a different face every time.", artifact: "In the course: Create Your Base Image + The Soul ID.", image: "assets/ava-portrait.jpg", caption: "Ava Pearson / original character portrait" },
+      { title: "Choose the picture deliberately.", description: "Work with camera settings, formats, visual styles and references. Study how the choices affect the image, rather than collecting more prompts.", artifact: "In the course: Camera Settings, Image Formats & Visual Styles.", image: "assets/ava-base-workflow.jpg", caption: "Original base-image workflow / course reference" },
+      { title: "Tell the camera what to do.", description: "Specify the movement, the sequence and the position in the frame. Ava’s video exercise uses a start image and a timed prompt to carry one character through several worlds.", artifact: "Course example: Seedance 2.5 / 30 seconds / 16:9 / 720p / sound on.", image: "assets/ava-worlds-still.jpg", caption: "Ava Walks Through the Worlds / original production frame" },
+      { title: "Notice what didn’t hold.", description: "Ava’s Soul ID tests produced a recurring problem: the hair length and colour drifted from her reference. The failed examples remain in the lesson.", artifact: "In the course: Test Your Soul ID. This is an actual drift example.", image: "assets/ava-hair-drift.jpg", caption: "Ava / wrong hair — original test result" },
+      { title: "Fix the drift, not everything.", description: "For a recurring feature drift, the lesson recommends adding a short, fixed description to each prompt before immediately retraining the identity.", artifact: "Reference anchor: chin-length wavy golden blonde bob, full bangs and sage-green eyes.", image: "assets/ava-hair-corrected.jpg", caption: "Ava / right hair — original corrected test" }
+    ];
+
+    function selectStep(index, moveFocus) {
+      const tabs = Array.from(document.querySelectorAll("[data-step]"));
+      const entry = steps[index];
+      tabs.forEach((tab, position) => {
+        tab.setAttribute("aria-selected", String(position === index));
+        tab.tabIndex = position === index ? 0 : -1;
+      });
+      document.getElementById("process-panel").setAttribute("aria-labelledby", tabs[index].id);
+      document.getElementById("step-label").textContent = "Working note / 0" + (index + 1);
+      document.getElementById("step-title").textContent = entry.title;
+      document.getElementById("step-description").textContent = entry.description;
+      document.getElementById("step-artifact").textContent = entry.artifact;
+      const image = document.getElementById("step-image");
+      image.src = entry.image;
+      image.alt = entry.caption;
+      document.getElementById("step-caption").textContent = entry.caption;
+      if (moveFocus) tabs[index].focus();
+    }
+
+    const mobileCta = document.querySelector(".mobile-cta");
+    const heroActions = document.querySelector(".hero-actions");
+    if (mobileCta && heroActions && "IntersectionObserver" in window) {
+      const media = window.matchMedia("(max-width: 700px)");
+      const io = new IntersectionObserver((entries) => {
+        if (!media.matches) {
+          mobileCta.classList.remove("is-visible");
+          return;
+        }
+        mobileCta.classList.toggle("is-visible", !entries[0].isIntersecting);
+      }, { threshold: 0 });
+      io.observe(heroActions);
+      media.addEventListener("change", () => {
+        if (!media.matches) mobileCta.classList.remove("is-visible");
+      });
+    }
+
+    Array.from(document.querySelectorAll("[data-step]")).forEach((tab, index) => {
+      tab.addEventListener("click", () => selectStep(index));
+      tab.addEventListener("keydown", (event) => {
+        let next = index;
+        if (event.key === "ArrowRight") next = (index + 1) % steps.length;
+        else if (event.key === "ArrowLeft") next = (index - 1 + steps.length) % steps.length;
+        else if (event.key === "Home") next = 0;
+        else if (event.key === "End") next = steps.length - 1;
+        else return;
+        event.preventDefault();
+        selectStep(next, true);
+      });
+    });
+  </script>
+</body>
+</html>
