@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>AIQbiz — Founding Edition checkout (design preview)</title>
+<link rel="icon" href="https://cdn.jsdelivr.net/gh/puranutris/aiqbiz-landing-preview@b08dffaf969198371c9071a2f37bae490fcdf765/assets/mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f4f3ef;--paper2:#e9e7e0;--ink:#20211f;--red:#bd382e;--mute:#6b6a64;--line:rgba(32,33,31,.18);--lineD:rgba(244,243,239,.18);
+--cond:"Barlow Condensed",Impact,sans-serif;--serif:"Instrument Serif",Georgia,serif;--sans:"DM Sans",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace;--pad:clamp(20px,4.4vw,64px)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.55 var(--sans);overflow-x:clip}
+a{color:inherit}
+.label{font:500 12px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:var(--pad);width:100%}
+.mock{background:var(--red);color:var(--paper);text-align:center;padding:8px 16px}
+.top{border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:800 24px/1 var(--cond)}
+.brand img{width:26px;height:26px}.brand b{color:var(--red)}
+.secure{color:var(--mute)}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,520px);gap:clamp(28px,5vw,80px);padding-block:clamp(36px,6vh,72px) clamp(48px,8vh,96px);align-items:start}
+/* summary */
+.sum{background:var(--ink);color:var(--paper);padding:clamp(24px,3vw,44px);border-radius:2px;position:sticky;top:24px}
+.sum .label{color:#e7776d}
+.sum h1{font:800 clamp(44px,5.2vw,84px)/.88 var(--cond);text-transform:uppercase;margin-top:14px}
+.sum h1 em{display:block;font:italic 400 .8em/1.05 var(--serif);text-transform:none;color:rgba(244,243,239,.9)}
+.sum .intro{margin-top:18px;color:rgba(244,243,239,.8);max-width:520px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.chips span{font:500 11px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--lineD);padding:8px 10px;border-radius:2px;color:rgba(244,243,239,.85)}
+.pts{list-style:none;margin-top:26px;border-top:1px solid var(--lineD)}
+.pts li{padding:14px 0 14px 28px;border-bottom:1px solid var(--lineD);position:relative}
+.pts li::before{content:"";position:absolute;left:2px;top:24px;width:12px;height:2px;background:var(--red)}
+.pts b{display:block;font:700 19px/1.1 var(--cond);text-transform:uppercase;letter-spacing:.01em}
+.pts span{color:rgba(244,243,239,.72);font-size:14.5px}
+.order{margin-top:26px;display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.order .pn{font:700 15px/1.3 var(--sans)}.order .pn small{display:block;font:400 13px/1.4 var(--sans);color:rgba(244,243,239,.7);margin-top:4px}
+.price{font:800 clamp(64px,6vw,96px)/.8 var(--cond);display:flex;align-items:flex-start;gap:4px}
+.price sup{font-size:.4em;margin-top:.1em}.price small{font:500 12px/1 var(--mono);align-self:flex-end;margin-left:6px;color:rgba(244,243,239,.7)}
+.sum .fine{margin-top:18px;font-size:13.5px;color:rgba(244,243,239,.66)}
+/* form */
+.form h2{font:800 clamp(34px,3vw,46px)/.95 var(--cond);text-transform:uppercase}
+.form .for{font:italic 400 clamp(20px,1.7vw,24px)/1.25 var(--serif);margin:10px 0 24px}
+.seg{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--ink);border-radius:2px;margin-bottom:18px}
+.seg label{display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;cursor:pointer;font-weight:500}
+.seg label+label{border-left:1px solid var(--ink)}
+.seg input{accent-color:var(--red)}
+.seg label:has(input:checked){background:var(--ink);color:var(--paper)}
+.f{display:block;margin-bottom:12px}
+.f input,.f select,.cardf .in{width:100%;font:400 16px/1.2 var(--sans);color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:2px;padding:15px 14px;outline:none;transition:border-color .2s,box-shadow .2s}
+.f input::placeholder{color:#8b8a84}
+.f input:focus,.f select:focus{border-color:var(--ink);box-shadow:0 0 0 3px rgba(189,56,46,.15)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.row2 .f{margin-bottom:12px}
+.company{display:none}
+.form:has(#ct-company:checked) .company{display:block}
+.plan{display:flex;justify-content:space-between;align-items:center;gap:12px;border:1px solid var(--ink);border-radius:2px;padding:14px;margin:18px 0 12px;background:var(--paper2)}
+.plan label{display:flex;gap:10px;align-items:center;font-weight:700}
+.plan input{accent-color:var(--red)}
+.plan .amt{font:800 26px/1 var(--cond)}.plan .amt small{font:500 11px/1 var(--mono);margin-right:6px;color:var(--mute)}
+.pay{border:1px solid var(--line);border-radius:2px;background:#fff}
+.pay>label{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px;cursor:pointer;font-weight:500}
+.pay>label span{display:flex;align-items:center;gap:10px}
+.pay input[type=radio]{accent-color:var(--red)}
+.pay+.pay{margin-top:-1px}
+.cardf{padding:4px 14px 16px;border-top:1px solid var(--line)}
+.cardf .lab{display:block;font:500 12px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--mute);margin:12px 0 6px}
+.cardf .in{height:48px;background:var(--paper)}
+.brands{font:500 11px/1 var(--mono);color:var(--mute);letter-spacing:.06em}
+.pp{font:700 italic 17px/1 var(--sans);color:#253b80}.pp b{color:#179bd7}
+.agree{display:flex;gap:12px;align-items:flex-start;margin:18px 0;font-size:14px;line-height:1.5;color:#3a3b38}
+.agree input{margin-top:3px;width:18px;height:18px;flex:none;accent-color:var(--red)}
+.agree a{color:var(--red)}
+.btn{display:flex;width:100%;justify-content:center;align-items:center;gap:.6em;background:var(--red);color:var(--paper);border:0;border-radius:2px;font:700 17px/1 var(--sans);padding:21px;cursor:not-allowed}
+.btn[disabled]{opacity:1}
+.mocknote{margin-top:10px;text-align:center;color:var(--mute)}
+footer{background:var(--ink);color:rgba(244,243,239,.7);padding-block:30px;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+footer nav{display:flex;gap:18px;flex-wrap:wrap}footer a{text-decoration:none}footer a:hover{color:var(--paper)}
+@media (max-width:900px){
+ .grid{grid-template-columns:1fr;gap:28px;padding-top:24px}
+ .sum{position:static}
+ .sum h1{font-size:clamp(44px,13vw,64px)}
+ .pts{display:none}
+ .row2{grid-template-columns:1fr;gap:0}
+ .row2.keep{grid-template-columns:1fr 1fr}
+ .brands{display:none}
+}
+</style>
+</head>
+<body>
+<div class="mock label">Design preview · not a live checkout · nothing is charged or submitted</div>
+<header class="top"><div class="wrap"><a class="brand" href="https://puranutris.github.io/aiqbiz-landing-preview/"><img src="https://cdn.jsdelivr.net/gh/puranutris/aiqbiz-landing-preview@b08dffaf969198371c9071a2f37bae490fcdf765/assets/mark.svg" alt=""><span>AI<b>Q</b>biz</span></a><span class="label secure">Secure checkout</span></div></header>
+<main class="wrap grid">
+  <aside class="sum" aria-label="Order summary">
+    <span class="label">AIQbiz · Founding Edition</span>
+    <h1>Your AI creator <em>starts here.</em></h1>
+    <p class="intro">Stop piecing together disconnected tutorials. Get the complete BUILD workflow — from a consistent character identity to images and videos — with practical prompts, exact settings and real project examples.</p>
+    <div class="chips"><span>38 practical lessons</span><span>BUILD available now</span><span>Lifetime course access</span></div>
+    <ul class="pts">
+      <li><b>Build with a clear process</b><span>Follow the character, image and video workflows step by step — not just isolated tips.</span></li>
+      <li><b>Put the methods to work</b><span>Use the prompts, settings and documented examples in your own business projects.</span></li>
+      <li><b>Keep future course additions</b><span>Get full access now and later additions to this same course. GROW and MONETIZE are planned for later.</span></li>
+    </ul>
+    <div class="order">
+      <div class="pn">AI Influencer Build Lab — Founding Edition<small>Pay once. Keep access. No recurring course fee.</small></div>
+      <div class="price"><sup>$</sup>97<small>USD</small></div>
+    </div>
+    <p class="fine">Complete your payment below to unlock the full course. External AI tools and usage credits are separate.</p>
+  </aside>
+
+  <form class="form" action="javascript:void(0)" onsubmit="return false" novalidate aria-label="Checkout form (design preview)">
+    <h2>Checkout</h2>
+    <p class="for">Built for freelancers, creators and small businesses.</p>
+    <div class="seg" role="radiogroup" aria-label="Customer type">
+      <label><input type="radio" name="customer-type" id="ct-individual" checked> Individual</label>
+      <label><input type="radio" name="customer-type" id="ct-company"> Company</label>
+    </div>
+    <label class="f"><input type="text" placeholder="Your name" autocomplete="off"></label>
+    <label class="f"><input type="email" placeholder="Email address" autocomplete="off"></label>
+    <label class="f company"><input type="text" placeholder="Company name (optional)" autocomplete="off"></label>
+    <label class="f"><input type="text" placeholder="VAT number (optional)" autocomplete="off"></label>
+    <label class="f"><input type="text" placeholder="Street and house number" autocomplete="off"></label>
+    <div class="row2">
+      <label class="f"><input type="text" placeholder="Postal / ZIP code" autocomplete="off"></label>
+      <label class="f"><input type="text" placeholder="City" autocomplete="off"></label>
+    </div>
+    <label class="f"><select aria-label="Country">
+<option value="">Choose a country</option>
+<option value="AF">Afghanistan</option>
+<option value="AX">Åland Islands</option>
+<option value="AL">Albania</option>
+<option value="DZ">Algeria</option>
+<option value="AS">American Samoa</option>
+<option value="AD">Andorra</option>
+<option value="AO">Angola</option>
+<option value="AI">Anguilla</option>
+<option value="AQ">Antarctica</option>
+<option value="AG">Antigua & Barbuda</option>
+<option value="AR">Argentina</option>
+<option value="AM">Armenia</option>
+<option value="AW">Aruba</option>
+<option value="AU">Australia</option>
+<option value="AT">Austria</option>
+<option value="AZ">Azerbaijan</option>
+<option value="BS">Bahamas</option>
+<option value="BH">Bahrain</option>
+<option value="BD">Bangladesh</option>
+<option value="BB">Barbados</option>
+<option value="BY">Belarus</option>
+<option value="BE">Belgium</option>
+<option value="BZ">Belize</option>
+<option value="BJ">Benin</option>
+<option value="BM">Bermuda</option>
+<option value="BT">Bhutan</option>
+<option value="BO">Bolivia</option>
+<option value="BA">Bosnia & Herzegovina</option>
+<option value="BW">Botswana</option>
+<option value="BV">Bouvet Island</option>
+<option value="BR">Brazil</option>
+<option value="IO">British Indian Ocean Territory</option>
+<option value="VG">British Virgin Islands</option>
+<option value="BN">Brunei</option>
+<option value="BG">Bulgaria</option>
+<option value="BF">Burkina Faso</option>
+<option value="BI">Burundi</option>
+<option value="KH">Cambodia</option>
+<option value="CM">Cameroon</option>
+<option value="CA">Canada</option>
+<option value="IC">Canary Islands</option>
+<option value="CV">Cape Verde</option>
+<option value="BQ">Caribbean Netherlands</option>
+<option value="KY">Cayman Islands</option>
+<option value="CF">Central African Republic</option>
+<option value="TD">Chad</option>
+<option value="CL">Chile</option>
+<option value="CN">China</option>
+<option value="CX">Christmas Island</option>
+<option value="CC">Cocos (Keeling) Islands</option>
+<option value="CO">Colombia</option>
+<option value="KM">Comoros</option>
+<option value="CG">Congo - Brazzaville</option>
+<option value="CD">Congo - Kinshasa</option>
+<option value="CK">Cook Islands</option>
+<option value="CR">Costa Rica</option>
+<option value="CI">Côte d’Ivoire</option>
+<option value="HR">Croatia</option>
+<option value="CU">Cuba</option>
+<option value="CW">Curaçao</option>
+<option value="CY">Cyprus</option>
+<option value="CZ">Czechia</option>
+<option value="DK">Denmark</option>
+<option value="DJ">Djibouti</option>
+<option value="DM">Dominica</option>
+<option value="DO">Dominican Republic</option>
+<option value="EC">Ecuador</option>
+<option value="EG">Egypt</option>
+<option value="SV">El Salvador</option>
+<option value="GQ">Equatorial Guinea</option>
+<option value="ER">Eritrea</option>
+<option value="EE">Estonia</option>
+<option value="SZ">Eswatini</option>
+<option value="ET">Ethiopia</option>
+<option value="FK">Falkland Islands (Islas Malvinas)</option>
+<option value="FO">Faroe Islands</option>
+<option value="FJ">Fiji</option>
+<option value="FI">Finland</option>
+<option value="FR">France</option>
+<option value="GF">French Guiana</option>
+<option value="PF">French Polynesia</option>
+<option value="TF">French Southern Territories</option>
+<option value="GA">Gabon</option>
+<option value="GM">Gambia</option>
+<option value="GE">Georgia</option>
+<option value="DE">Germany</option>
+<option value="GH">Ghana</option>
+<option value="GI">Gibraltar</option>
+<option value="GR">Greece</option>
+<option value="GL">Greenland</option>
+<option value="GD">Grenada</option>
+<option value="GP">Guadeloupe</option>
+<option value="GU">Guam</option>
+<option value="GT">Guatemala</option>
+<option value="GG">Guernsey</option>
+<option value="GN">Guinea</option>
+<option value="GW">Guinea-Bissau</option>
+<option value="GY">Guyana</option>
+<option value="HT">Haiti</option>
+<option value="HM">Heard & McDonald Islands</option>
+<option value="HN">Honduras</option>
+<option value="HK">Hong Kong</option>
+<option value="HU">Hungary</option>
+<option value="IS">Iceland</option>
+<option value="IN">India</option>
+<option value="ID">Indonesia</option>
+<option value="IR">Iran</option>
+<option value="IQ">Iraq</option>
+<option value="IE">Ireland</option>
+<option value="IM">Isle of Man</option>
+<option value="IL">Israel</option>
+<option value="IT">Italy</option>
+<option value="JM">Jamaica</option>
+<option value="JP">Japan</option>
+<option value="JE">Jersey</option>
+<option value="JO">Jordan</option>
+<option value="KZ">Kazakhstan</option>
+<option value="KE">Kenya</option>
+<option value="KI">Kiribati</option>
+<option value="XK">Kosovo</option>
+<option value="KW">Kuwait</option>
+<option value="KG">Kyrgyzstan</option>
+<option value="LA">Laos</option>
+<option value="LV">Latvia</option>
+<option value="LB">Lebanon</option>
+<option value="LS">Lesotho</option>
+<option value="LR">Liberia</option>
+<option value="LY">Libya</option>
+<option value="LI">Liechtenstein</option>
+<option value="LT">Lithuania</option>
+<option value="LU">Luxembourg</option>
+<option value="MO">Macao</option>
+<option value="MG">Madagascar</option>
+<option value="MW">Malawi</option>
+<option value="MY">Malaysia</option>
+<option value="MV">Maldives</option>
+<option value="ML">Mali</option>
+<option value="MT">Malta</option>
+<option value="MH">Marshall Islands</option>
+<option value="MQ">Martinique</option>
+<option value="MR">Mauritania</option>
+<option value="MU">Mauritius</option>
+<option value="YT">Mayotte</option>
+<option value="MX">Mexico</option>
+<option value="FM">Micronesia</option>
+<option value="MD">Moldova</option>
+<option value="MC">Monaco</option>
+<option value="MN">Mongolia</option>
+<option value="ME">Montenegro</option>
+<option value="MS">Montserrat</option>
+<option value="MA">Morocco</option>
+<option value="MZ">Mozambique</option>
+<option value="MM">Myanmar (Burma)</option>
+<option value="NA">Namibia</option>
+<option value="NR">Nauru</option>
+<option value="NP">Nepal</option>
+<option value="NL">Netherlands</option>
+<option value="NC">New Caledonia</option>
+<option value="NZ">New Zealand</option>
+<option value="NI">Nicaragua</option>
+<option value="NE">Niger</option>
+<option value="NG">Nigeria</option>
+<option value="NU">Niue</option>
+<option value="NF">Norfolk Island</option>
+<option value="KP">North Korea</option>
+<option value="MK">North Macedonia</option>
+<option value="MP">Northern Mariana Islands</option>
+<option value="NO">Norway</option>
+<option value="OM">Oman</option>
+<option value="PK">Pakistan</option>
+<option value="PW">Palau</option>
+<option value="PS">Palestine</option>
+<option value="PA">Panama</option>
+<option value="PG">Papua New Guinea</option>
+<option value="PY">Paraguay</option>
+<option value="PE">Peru</option>
+<option value="PH">Philippines</option>
+<option value="PN">Pitcairn Islands</option>
+<option value="PL">Poland</option>
+<option value="PT">Portugal</option>
+<option value="PR">Puerto Rico</option>
+<option value="QA">Qatar</option>
+<option value="RE">Réunion</option>
+<option value="RO">Romania</option>
+<option value="RU">Russia</option>
+<option value="RW">Rwanda</option>
+<option value="WS">Samoa</option>
+<option value="SM">San Marino</option>
+<option value="ST">São Tomé & Príncipe</option>
+<option value="SA">Saudi Arabia</option>
+<option value="SN">Senegal</option>
+<option value="RS">Serbia</option>
+<option value="SC">Seychelles</option>
+<option value="SL">Sierra Leone</option>
+<option value="SG">Singapore</option>
+<option value="SX">Sint Maarten</option>
+<option value="SK">Slovakia</option>
+<option value="SI">Slovenia</option>
+<option value="SB">Solomon Islands</option>
+<option value="SO">Somalia</option>
+<option value="ZA">South Africa</option>
+<option value="GS">South Georgia & South Sandwich Islands</option>
+<option value="KR">South Korea</option>
+<option value="SS">South Sudan</option>
+<option value="ES">Spain</option>
+<option value="LK">Sri Lanka</option>
+<option value="BL">St. Barthélemy</option>
+<option value="SH">St. Helena</option>
+<option value="KN">St. Kitts & Nevis</option>
+<option value="LC">St. Lucia</option>
+<option value="MF">St. Martin</option>
+<option value="PM">St. Pierre & Miquelon</option>
+<option value="VC">St. Vincent & Grenadines</option>
+<option value="SD">Sudan</option>
+<option value="SR">Suriname</option>
+<option value="SJ">Svalbard & Jan Mayen</option>
+<option value="SE">Sweden</option>
+<option value="CH">Switzerland</option>
+<option value="SY">Syria</option>
+<option value="TW">Taiwan</option>
+<option value="TJ">Tajikistan</option>
+<option value="TZ">Tanzania</option>
+<option value="TH">Thailand</option>
+<option value="TL">Timor-Leste</option>
+<option value="TG">Togo</option>
+<option value="TK">Tokelau</option>
+<option value="TO">Tonga</option>
+<option value="TT">Trinidad & Tobago</option>
+<option value="TN">Tunisia</option>
+<option value="TR">Türkiye</option>
+<option value="TM">Turkmenistan</option>
+<option value="TC">Turks & Caicos Islands</option>
+<option value="TV">Tuvalu</option>
+<option value="UM">U.S. Outlying Islands</option>
+<option value="VI">U.S. Virgin Islands</option>
+<option value="UG">Uganda</option>
+<option value="UA">Ukraine</option>
+<option value="AE">United Arab Emirates</option>
+<option value="GB">United Kingdom</option>
+<option value="US" selected>United States</option>
+<option value="UY">Uruguay</option>
+<option value="UZ">Uzbekistan</option>
+<option value="VU">Vanuatu</option>
+<option value="VA">Vatican City</option>
+<option value="VE">Venezuela</option>
+<option value="VN">Vietnam</option>
+<option value="WF">Wallis & Futuna</option>
+<option value="EH">Western Sahara</option>
+<option value="YE">Yemen</option>
+<option value="ZM">Zambia</option>
+<option value="ZW">Zimbabwe</option>
+    </select></label>
+    <div class="plan"><label><input type="radio" checked> Founding Edition — lifetime access</label><span class="amt"><small>USD</small>$97.00</span></div>
+    <div class="pay">
+      <label><span><input type="radio" name="pm" checked> Credit or debit card</span><span class="brands">VISA · MASTERCARD · AMEX · DISCOVER</span></label>
+      <div class="cardf">
+        <span class="lab">Card number</span><div class="in" aria-hidden="true"></div>
+        <div class="row2 keep" style="gap:12px"><div><span class="lab">Expiration date</span><div class="in" aria-hidden="true"></div></div><div><span class="lab">CVC</span><div class="in" aria-hidden="true"></div></div></div>
+      </div>
+    </div>
+    <div class="pay"><label><span><input type="radio" name="pm"> PayPal</span><span class="pp">Pay<b>Pal</b></span></label></div>
+    <label class="agree"><input type="checkbox"> <span>I confirm that I am acting for my trade, business or self-employed professional activity, not predominantly for private purposes, and I accept the <a href="https://www.aiqbiz.com/terms" target="_blank" rel="noopener">Terms for Business Customers (9 November 2026)</a>.</span></label>
+    <button class="btn" type="button" disabled aria-disabled="true">Unlock lifetime access — 97 USD</button>
+    <p class="label mocknote">Mockup · button disabled</p>
+  </form>
+</main>
+<footer><div class="wrap"><span>AIQbiz is a project of Puranutris LLC · Business customers only.</span><nav><a href="https://www.aiqbiz.com/imprint">Imprint</a><a href="https://www.aiqbiz.com/privacy">Privacy</a><a href="https://www.aiqbiz.com/terms">Terms</a><a href="https://www.aiqbiz.com/contact">Contact</a></nav><span>©2026 Puranutris LLC</span></div></footer>
+</body>
+</html>
