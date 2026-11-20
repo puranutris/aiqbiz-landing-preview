@@ -17,13 +17,14 @@
   --paper:#f4f3ef; --paper2:#e9e7e0; --ink:#20211f; --ink2:#2b2c29; --red:#bd382e; --mute:#6b6a64; --line:rgba(32,33,31,.18); --lineD:rgba(244,243,239,.18);
   --cond:"Barlow Condensed",Impact,sans-serif; --serif:"Instrument Serif",Georgia,serif; --sans:"DM Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
   --pad:clamp(20px,4.4vw,64px);
+  --max:1568px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%}
 body{background:var(--paper);color:var(--ink);font:400 17px/1.55 var(--sans);overflow-x:clip}
 img,video{display:block;max-width:100%}
 a{color:inherit}
-.wrap{padding-inline:var(--pad);max-width:1520px;margin-inline:auto}
+.wrap{padding-inline:var(--pad);max-width:var(--max);margin-inline:auto;width:100%}
 .label{font:500 12px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase}
 .serif{font-family:var(--serif);font-weight:400}
 .it{font-style:italic}
@@ -87,20 +88,19 @@ a{color:inherit}
 
 /* CAST */
 .cast{padding-block:clamp(80px,12vh,150px) 40px;overflow:hidden}
-.sechead{display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,4vw,80px);align-items:end;margin-bottom:clamp(36px,6vh,72px)}
-.sechead .label{color:var(--red);padding-bottom:14px}
+.sechead{display:grid;grid-template-columns:1fr;gap:14px;align-items:end;margin-bottom:clamp(36px,6vh,72px)}
+.sechead .label{color:var(--red);padding-bottom:0}
 .sechead h2{font:800 clamp(52px,7.6vw,128px)/.88 var(--cond);text-transform:uppercase;letter-spacing:-.005em}
 .sechead h2 em{font:italic 400 .82em/1 var(--serif);text-transform:none;letter-spacing:0}
-.duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,48px)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,48px);align-items:start}
 .card{position:relative}
 .card .media{position:relative;aspect-ratio:4/5;overflow:hidden;background:#ddd}
 .card .media video,.card .media img{width:100%;height:118%;object-fit:cover;object-position:50% 12%;will-change:transform}
-.card .name{position:absolute;left:0;right:0;bottom:-.14em;font:800 clamp(64px,9vw,150px)/.8 var(--cond);text-transform:uppercase;color:var(--paper);mix-blend-mode:normal;padding:0 18px;pointer-events:none;text-shadow:0 1px 30px rgba(0,0,0,.25)}
+.card .name{position:absolute;left:0;right:0;bottom:16px;font:800 clamp(64px,9vw,150px)/.8 var(--cond);text-transform:uppercase;color:var(--paper);mix-blend-mode:normal;padding:0 18px;pointer-events:none;text-shadow:0 1px 30px rgba(0,0,0,.25)}
 .card .meta{display:grid;grid-template-columns:auto 1fr;gap:18px;padding-top:20px;border-top:1px solid var(--ink);margin-top:26px}
 .card .meta .label{color:var(--mute);padding-top:4px}
 .card .meta h3{font:400 30px/1.05 var(--serif);margin-bottom:6px}
 .card .meta p{color:#3a3b38;max-width:460px}
-.card.e{margin-top:clamp(40px,10vh,140px)}
 .note{margin-top:42px;max-width:760px;font:400 clamp(22px,2.1vw,30px)/1.25 var(--serif)}
 .note b{font-weight:400;color:var(--red);font-style:italic}
 
@@ -109,7 +109,7 @@ a{color:inherit}
 .strip .head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;margin-bottom:22px}
 .strip .head h3{font:700 clamp(30px,3.2vw,48px)/1 var(--cond);text-transform:uppercase}
 .strip .head p{color:var(--mute);max-width:420px;font-size:15px}
-.reel{display:flex;gap:16px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;scroll-padding-inline:var(--pad);padding-inline:var(--pad);padding-bottom:6px;scrollbar-width:none;cursor:grab;touch-action:pan-x pan-y}
+.reel{display:flex;gap:16px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;scroll-padding-inline:max(var(--pad), calc((100% - var(--max)) / 2 + var(--pad)));padding-inline:max(var(--pad), calc((100% - var(--max)) / 2 + var(--pad)));padding-bottom:6px;scrollbar-width:none;cursor:grab;touch-action:pan-x pan-y}
 .reel::-webkit-scrollbar{display:none}
 .reel:focus-visible{outline:2px solid var(--red);outline-offset:4px}
 .reel.drag{cursor:grabbing;scroll-snap-type:none;user-select:none}
