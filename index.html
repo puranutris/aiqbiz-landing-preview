@@ -109,7 +109,18 @@ a{color:inherit}
 .strip .head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;margin-bottom:22px}
 .strip .head h3{font:700 clamp(30px,3.2vw,48px)/1 var(--cond);text-transform:uppercase}
 .strip .head p{color:var(--mute);max-width:420px;font-size:15px}
-.reel{display:flex;gap:16px;width:max-content;will-change:transform}
+.reel{display:flex;gap:16px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;scroll-padding-inline:var(--pad);padding-inline:var(--pad);padding-bottom:6px;scrollbar-width:none;cursor:grab;touch-action:pan-x pan-y}
+.reel::-webkit-scrollbar{display:none}
+.reel:focus-visible{outline:2px solid var(--red);outline-offset:4px}
+.reel.drag{cursor:grabbing;scroll-snap-type:none;user-select:none}
+.reel.drag img{pointer-events:none}
+.reel figure{scroll-snap-align:start}
+.reel img{-webkit-user-drag:none;user-select:none}
+.gnav{display:flex;align-items:center;gap:10px;margin-top:18px}
+.gnav button{width:52px;height:52px;border:1px solid var(--ink);background:transparent;color:var(--ink);font:500 22px/1 var(--sans);cursor:pointer;border-radius:2px;transition:background .2s,color .2s}
+.gnav button:hover:not(:disabled){background:var(--ink);color:var(--paper)}
+.gnav button:disabled{opacity:.3;cursor:default}
+.gnav .hint{margin-left:8px;color:var(--mute)}
 .reel figure{width:clamp(170px,17vw,250px);flex:none}
 .reel img{width:100%;height:auto;aspect-ratio:9/14;object-fit:cover;background:#ddd}
 .reel figcaption{margin-top:8px;color:var(--mute)}
@@ -311,6 +322,7 @@ footer .wrap{align-items:center}
   .card .name{font-size:clamp(64px,22vw,110px)}
   .card .meta{grid-template-columns:1fr;gap:6px}
   .strip .head{flex-direction:column;gap:8px}
+  .gnav button{width:46px;height:46px}
   .mgrid,.pgrid,.ogrid,.fgrid{grid-template-columns:1fr}
   .msticky{position:static}
   .steps li{grid-template-columns:64px 1fr;gap:14px;padding:26px 0 28px}
@@ -395,7 +407,7 @@ footer .wrap{align-items:center}
     <h2 data-r>Same face.<br><em>Every scene.</em></h2>
     <p data-r>This is what you learn to build. References, base images and Soul ID, so the same creator can move through different scenes and formats. Every image below is Ava or Ethan, made in the course.</p>
   </div>
-  <div class="reel" id="reel">
+  <div class="reel" id="reel" tabindex="0" role="region" aria-label="Ava and Ethan in different scenes, scrollable gallery">
     <figure><img src="https://cdn.jsdelivr.net/gh/puranutris/aiqbiz-landing-preview@b08dffaf969198371c9071a2f37bae490fcdf765/assets/ava_nat_01.webp" alt="Ava, neutral front view at a desk" loading="lazy" width="900" height="1612"><figcaption class="label">Ava · desk</figcaption></figure>
     <figure><img src="https://cdn.jsdelivr.net/gh/puranutris/aiqbiz-landing-preview@b08dffaf969198371c9071a2f37bae490fcdf765/assets/ethan_nat_01.webp" alt="Ethan, front view by a window" loading="lazy" width="900" height="1612"><figcaption class="label">Ethan · window</figcaption></figure>
     <figure><img src="https://cdn.jsdelivr.net/gh/puranutris/aiqbiz-landing-preview@b08dffaf969198371c9071a2f37bae490fcdf765/assets/ava_nat_04.webp" alt="Ava smiling at home" loading="lazy" width="900" height="1612"><figcaption class="label">Ava · home</figcaption></figure>
@@ -406,6 +418,7 @@ footer .wrap{align-items:center}
     <figure><img src="https://cdn.jsdelivr.net/gh/puranutris/aiqbiz-landing-preview@b08dffaf969198371c9071a2f37bae490fcdf765/assets/ethan_nat_05.webp" alt="Ethan in three-quarter view at work" loading="lazy" width="900" height="1612"><figcaption class="label">Ethan · studio</figcaption></figure>
     <figure><img src="https://cdn.jsdelivr.net/gh/puranutris/aiqbiz-landing-preview@b08dffaf969198371c9071a2f37bae490fcdf765/assets/ethan_nat_06.webp" alt="Ethan on a balcony" loading="lazy" width="900" height="1612"><figcaption class="label">Ethan · balcony</figcaption></figure>
   </div>
+  <div class="wrap gnav"><button type="button" class="gprev" aria-label="Previous images" aria-controls="reel">←</button><button type="button" class="gnext" aria-label="Next images" aria-controls="reel">→</button><span class="label hint">Swipe or drag</span></div>
 </section>
 
 <!-- CAST -->
@@ -656,6 +669,25 @@ footer .wrap{align-items:center}
     vids.forEach(function(v){ io.observe(v); });
   }
 
+  // gallery: native scroll + snap; arrows, mouse drag, keyboard (works without GSAP)
+  (function(){
+    var r=document.getElementById('reel'); if(!r) return;
+    var prev=document.querySelector('.gprev'), next=document.querySelector('.gnext');
+    function step(){ var f=r.querySelector('figure'); return f ? f.getBoundingClientRect().width+16 : 260; }
+    function page(){ return Math.max(step(), Math.floor((r.clientWidth-40)/step())*step()); }
+    function upd(){ prev.disabled = r.scrollLeft<=2; next.disabled = r.scrollLeft >= r.scrollWidth-r.clientWidth-2; }
+    function go(d){ r.scrollBy({left:d*page(), behavior: reduce?'auto':'smooth'}); }
+    prev.addEventListener('click',function(){go(-1)}); next.addEventListener('click',function(){go(1)});
+    r.addEventListener('scroll',upd,{passive:true}); window.addEventListener('resize',upd); upd();
+    r.addEventListener('keydown',function(e){ if(e.key==='ArrowRight'){e.preventDefault();r.scrollBy({left:step(),behavior:reduce?'auto':'smooth'});} else if(e.key==='ArrowLeft'){e.preventDefault();r.scrollBy({left:-step(),behavior:reduce?'auto':'smooth'});} });
+    var down=false,sx=0,sl=0,moved=0;
+    r.addEventListener('pointerdown',function(e){ if(e.pointerType!=='mouse'||e.button!==0) return; down=true; moved=0; sx=e.clientX; sl=r.scrollLeft; r.classList.add('drag'); r.setPointerCapture(e.pointerId); });
+    r.addEventListener('pointermove',function(e){ if(!down) return; var dx=e.clientX-sx; moved=Math.max(moved,Math.abs(dx)); r.scrollLeft=sl-dx; });
+    function end(e){ if(!down) return; down=false; var cur=r.scrollLeft; r.classList.remove('drag'); var st=step(), base=parseFloat(getComputedStyle(r).paddingLeft)||0; var target=Math.round(cur/st)*st; r.scrollLeft=cur; r.scrollTo({left:target,behavior:reduce?'auto':'smooth'}); }
+    r.addEventListener('pointerup',end); r.addEventListener('pointercancel',end); r.addEventListener('lostpointercapture',end);
+    r.addEventListener('click',function(e){ if(moved>5){e.preventDefault();e.stopPropagation();} },true);
+  })();
+
   // method step image swap (works without GSAP)
   var steps=[].slice.call(document.querySelectorAll('.steps li')), imgs=[].slice.call(document.querySelectorAll('.imgbox img')), cap=document.getElementById('mcap');
   function setStep(i){ steps.forEach(function(s,k){s.classList.toggle('on',k===i)}); imgs.forEach(function(m){m.classList.toggle('on', +m.dataset.step===i)}); cap.textContent=steps[i].dataset.cap; }
@@ -701,10 +733,6 @@ footer .wrap{align-items:center}
     gsap.from(m.querySelector('.name'),{yPercent:60,opacity:0,duration:1.1,ease:'power4.out',scrollTrigger:{trigger:m,start:'top 70%',once:true}});
     gsap.from(m,{clipPath:'inset(12% 8% 12% 8%)',duration:1.3,ease:'expo.out',scrollTrigger:{trigger:m,start:'top 85%',once:true}});
   });
-
-  // face reel: scroll-linked horizontal drift
-  var reel=document.getElementById('reel');
-  gsap.fromTo(reel,{x:0},{x:function(){return -(reel.scrollWidth-window.innerWidth)-0;},ease:'none',scrollTrigger:{trigger:'.strip',start:'top bottom',end:'bottom top',scrub:true,invalidateOnRefresh:true}});
 
   // prompt typewriter
   var pre=document.getElementById('typed'), html=pre.innerHTML;
