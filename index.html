@@ -652,7 +652,13 @@ footer .disc{max-width:640px}
   }
   setStep(0);
 
-  if(reduce || !window.gsap || !window.ScrollTrigger){ return; }
+  if(reduce){ return; }
+  var tries=0;
+  (function waitGsap(){
+    if(window.gsap && window.ScrollTrigger){ initMotion(); return; }
+    if(++tries<120){ setTimeout(waitGsap,50); }
+  })();
+  function initMotion(){
   gsap.registerPlugin(ScrollTrigger);
   document.documentElement.classList.add('anim');
 
@@ -736,6 +742,8 @@ footer .disc{max-width:640px}
   gsap.fromTo('.gtrack',{xPercent:0},{xPercent:-30,ease:'none',scrollTrigger:{trigger:'.end',start:'top bottom',end:'bottom bottom',scrub:true}});
 
   window.addEventListener('load',function(){ ScrollTrigger.refresh(); });
+  setTimeout(function(){ ScrollTrigger.refresh(); },1200);
+  }
 })();
 </script>
 </body>
