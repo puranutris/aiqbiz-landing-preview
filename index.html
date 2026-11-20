@@ -297,6 +297,24 @@ footer .wrap{align-items:center}
   .strip.first .head{align-items:start}
 }
 
+/* team */
+.team{padding-block:var(--sec)}
+.tgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,28px)}
+.fcard{display:grid;grid-template-columns:minmax(120px,38%) 1fr;gap:clamp(18px,2vw,32px);align-items:start;border-top:1px solid var(--ink);padding-top:clamp(16px,2vw,24px);height:100%}
+.fimg{aspect-ratio:4/5;overflow:hidden;background:var(--paper2)}
+.fimg img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.ftext .label{color:var(--red);display:block;padding-top:4px}
+.ftext h3{font:800 clamp(48px,5vw,88px)/.85 var(--cond);text-transform:uppercase;margin:10px 0 14px}
+.ftext .cred{font:500 13px/1.5 var(--mono);letter-spacing:.02em;color:var(--mute);margin-bottom:12px}
+.ftext p{color:#3a3b38;max-width:420px}
+@media (max-width:860px){
+  .tgrid{grid-template-columns:1fr;grid-auto-rows:1fr;gap:34px}
+  .fcard{grid-template-columns:40% 1fr;gap:16px}
+  .ftext h3{font-size:clamp(40px,12vw,64px);margin:8px 0 10px}
+  .ftext .cred{font-size:12px}
+  .ftext p{font-size:15px}
+}
+
 /* reveal base (only when JS animation is active) */
 .anim [data-r]{opacity:0;transform:translateY(34px)}
 
@@ -552,11 +570,39 @@ footer .wrap{align-items:center}
   </div>
 </section>
 
+<!-- TEAM -->
+<section class="team wrap" id="team" aria-label="The people behind AIQbiz">
+  <div class="sechead">
+    <span class="label" data-r>Build 08 · The people behind AIQbiz</span>
+    <h2 data-r>Two founders.<br><em>One course.</em></h2>
+  </div>
+  <div class="tgrid">
+    <article class="fcard" data-r>
+      <div class="fimg"><img src="assets/founder-andreas.webp" alt="Andreas, founder of AIQbiz" width="720" height="900" loading="lazy" decoding="async"></div>
+      <div class="ftext">
+        <span class="label">Founder</span>
+        <h3>Andreas</h3>
+        <p class="cred">Business Informatics (B.Sc.) · Certified software developer (IHK)</p>
+        <p>20 years as an entrepreneur. That experience is the foundation of AIQbiz.</p>
+      </div>
+    </article>
+    <article class="fcard" data-r>
+      <div class="fimg"><img src="assets/founder-diana.webp" alt="Diana, co-founder of AIQbiz" width="720" height="900" loading="lazy" decoding="async"></div>
+      <div class="ftext">
+        <span class="label">Co-founder · Creator of BUILD</span>
+        <h3>Diana</h3>
+        <p class="cred">Studied Media Informatics.</p>
+        <p>She builds the AI creators you see on this page, Ava and Ethan.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
 <!-- OFFER -->
 <section class="offer" id="offer">
   <div class="wrap ogrid">
     <div>
-      <span class="label" style="color:#e7776d" data-r>Build 08 · The offer</span>
+      <span class="label" style="color:#e7776d" data-r>Build 09 · The offer</span>
       <h2 style="margin-top:14px" data-r>One course. One payment. <em>Lifetime access.</em></h2>
       <p class="intro" data-r>Join the AIQbiz Builders while the course is being built in the open. The Founding Edition is a single course with lifetime access. Pay once and follow the course as the available material grows. An AI creator is the first build; GROW and MONETIZE follow.</p>
       <ol class="stack" data-r>
@@ -588,7 +634,7 @@ footer .wrap{align-items:center}
 <!-- FAQ -->
 <section class="faq wrap" id="faq">
   <div class="fgrid">
-    <div><span class="label red" data-r>Build 09 · Questions</span><h2 style="margin-top:14px" data-r>Clear <em>before you join.</em></h2></div>
+    <div><span class="label red" data-r>Build 10 · Questions</span><h2 style="margin-top:14px" data-r>Clear <em>before you join.</em></h2></div>
     <div>
       <details><summary>What do I get for $97?<span class="pm"></span></summary><p>The Founding Edition is one course with lifetime access. It includes full access from module 4 onward, while modules 1–3 are available through the free path. Later course additions are included automatically for paid members.</p></details>
       <details><summary>What is available now?<span class="pm"></span></summary><p>BUILD is the current stage. The current course path covers Welcome to AIQbiz, The AI Creator Landscape, Your First Build, What Your Soul ID Can Do, Getting the Image You Want, and The Language of Video. GROW and MONETIZE are coming later.</p></details>
@@ -605,7 +651,7 @@ footer .wrap{align-items:center}
 <!-- END -->
 <section class="end">
   <div class="wrap">
-    <span class="label" data-r>Build 10 · AIQbiz Builders</span>
+    <span class="label" data-r>Build 11 · AIQbiz Builders</span>
     <h2 data-r>Start with<br><em>the first build.</em></h2>
     <div class="row">
       <p data-r>Follow the process, use the prompt, inspect the result, and make the next decision. Begin free, or join the Builders with lifetime access.</p>
