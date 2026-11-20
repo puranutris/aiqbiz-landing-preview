@@ -115,6 +115,10 @@ a{color:inherit}
 .reel.drag{cursor:grabbing;scroll-snap-type:none;user-select:none}
 .reel.drag img{pointer-events:none}
 .reel figure{scroll-snap-align:start}
+@media (min-width:861px){
+  .reel{width:calc(100% - 2 * var(--pad));max-width:calc(var(--max) - 2 * var(--pad));margin-inline:auto;padding-inline:0;scroll-padding-inline:0;-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 90px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 90px),transparent)}
+  .reel.at-end{-webkit-mask-image:none;mask-image:none}
+}
 .reel img{-webkit-user-drag:none;user-select:none}
 .gnav{display:flex;align-items:center;gap:10px;margin-top:18px}
 .gnav button{width:52px;height:52px;border:1px solid var(--ink);background:transparent;color:var(--ink);font:500 22px/1 var(--sans);cursor:pointer;border-radius:2px;transition:background .2s,color .2s}
@@ -675,7 +679,7 @@ footer .wrap{align-items:center}
     var prev=document.querySelector('.gprev'), next=document.querySelector('.gnext');
     function step(){ var f=r.querySelector('figure'); return f ? f.getBoundingClientRect().width+16 : 260; }
     function page(){ return Math.max(step(), Math.floor((r.clientWidth-40)/step())*step()); }
-    function upd(){ prev.disabled = r.scrollLeft<=2; next.disabled = r.scrollLeft >= r.scrollWidth-r.clientWidth-2; }
+    function upd(){ prev.disabled = r.scrollLeft<=2; next.disabled = r.scrollLeft >= r.scrollWidth-r.clientWidth-2; r.classList.toggle('at-end', next.disabled); }
     function go(d){ r.scrollBy({left:d*page(), behavior: reduce?'auto':'smooth'}); }
     prev.addEventListener('click',function(){go(-1)}); next.addEventListener('click',function(){go(1)});
     r.addEventListener('scroll',upd,{passive:true}); window.addEventListener('resize',upd); upd();
