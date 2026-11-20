@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>AIQbiz login preview — theme &amp; logo only</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --paper:#f4f3ef; --paper2:#e9e7e0; --ink:#20211f; --ink2:#2b2c29; --red:#bd382e; --mute:#6b6a64;
+  --line:rgba(32,33,31,.18); --lineD:rgba(244,243,239,.18);
+  --cond:"Barlow Condensed",Impact,sans-serif; --serif:"Instrument Serif",Georgia,serif;
+  --sans:"DM Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--paper);color:var(--ink);font:400 16px/1.5 var(--sans);overflow-x:hidden;-webkit-text-size-adjust:100%}
+img{display:block;max-width:100%}
+a{color:inherit}
+
+
+.preview-bar{background:var(--ink);color:var(--paper);font:500 11px/1.35 var(--mono);letter-spacing:.04em;text-transform:uppercase;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  padding:9px 18px;border-bottom:1px solid var(--lineD)}
+.preview-bar nav{display:flex;flex-wrap:wrap;gap:14px}
+.preview-bar a{color:rgba(244,243,239,.72);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:1px}
+.preview-bar a:hover{color:var(--paper)}
+.preview-bar a[aria-current="page"]{color:var(--paper);border-bottom-color:var(--red)}
+.preview-bar .note{color:rgba(244,243,239,.72);text-transform:none;letter-spacing:.02em;font-family:var(--sans);font-size:12px;font-weight:400}
+@media(max-width:640px){
+  .preview-bar{padding:8px 14px}
+  .preview-bar .note{flex:1 1 100%}
+}
+
+
+.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font:800 26px/1 var(--cond);letter-spacing:.01em;color:var(--ink)}
+.brand b{color:var(--red);font-weight:800}
+.brand img{width:26px;height:26px}
+.kicker{font:500 12px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
+h1{font:400 48px/.95 var(--serif);letter-spacing:-.02em;color:var(--ink)}
+h1 em{font-style:italic}
+.sub{margin-top:12px;color:var(--mute);font:400 16px/1.5 var(--sans)}
+form{margin-top:32px;display:flex;flex-direction:column;gap:16px;width:100%;max-width:420px}
+label{display:flex;flex-direction:column;gap:7px;font:500 13px/1.3 var(--sans);color:var(--ink)}
+input[type=email],input[type=password]{width:100%;height:52px;padding:0 16px;border:1px solid var(--line);border-radius:2px;
+  background:#fff;color:var(--ink);font:400 16px/1.4 var(--sans);outline:none;appearance:none}
+input:focus{border-color:var(--ink);box-shadow:0 0 0 1px var(--ink)}
+.row{display:flex;justify-content:flex-end}
+.tlink{font:500 14px/1.4 var(--sans);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px;color:var(--ink);background:none;border-top:0;border-left:0;border-right:0;cursor:pointer;font-family:var(--sans)}
+.tlink:hover{color:var(--red)}
+.btn{display:inline-flex;align-items:center;justify-content:center;width:100%;height:54px;background:var(--red);color:var(--paper);
+  border:0;border-radius:2px;font:700 15px/1 var(--sans);letter-spacing:.01em;cursor:default;transition:background .25s}
+.btn:hover{background:#a52e25}
+.guest{margin-top:22px;color:var(--mute);font:400 14px/1.5 var(--sans);max-width:420px}
+.guest a{color:var(--ink);font-weight:500;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:1px}
+.guest a:hover{color:var(--red)}
+@media(max-width:800px){
+  h1{font-size:36px}
+}
+
+body{min-height:100svh;background:var(--paper)}
+.top{display:flex;align-items:center;justify-content:space-between;padding:18px 28px 0}
+.lang{font:500 13px/1 var(--sans);color:var(--mute);cursor:default}
+.stage{min-height:calc(100svh - 90px);display:flex;align-items:center;justify-content:center;padding:32px 20px 48px}
+.card{width:100%;max-width:520px;background:#fff;border-radius:12px;padding:56px 48px;box-shadow:0 1px 0 var(--line)}
+.card .brand{display:flex;justify-content:center;margin-bottom:18px}
+.card .brand img{width:48px;height:48px}
+.card h1{text-align:center;font-size:42px}
+.card .sub{text-align:center}
+.card form,.card .guest{max-width:none}
+@media(max-width:800px){
+  .top{padding:14px 16px 0}
+  .stage{padding:24px 16px 40px;align-items:flex-start}
+  .card{padding:36px 20px;border-radius:12px}
+  .card h1{font-size:34px}
+}
+</style>
+</head>
+<body>
+<div class="preview-bar">
+  <span class="note">Preview only — not live. This form does not submit.</span>
+  <nav><a href="../">Overview</a><a href="../custom/">Custom page</a><a href="./" aria-current="page">Theme &amp; logo only</a></nav>
+</div>
+<header class="top">
+  <a class="brand" href="https://www.aiqbiz.com/"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSIjZjRmM2VmIi8+PHBhdGggZD0iTTEzIDE4aDMwdjI4SDEzeiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMWMxYzFhIiBzdHJva2Utd2lkdGg9IjUiLz48cmVjdCB4PSI0MCIgeT0iNDAiIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMyIgZmlsbD0iI2M5MzYyOSIvPjwvc3ZnPgo=" alt=""><span>AI<b>Q</b>biz</span></a>
+  <span class="lang">EN</span>
+</header>
+<main class="stage">
+  <div class="card">
+    <a class="brand" href="https://www.aiqbiz.com/"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSIjZjRmM2VmIi8+PHBhdGggZD0iTTEzIDE4aDMwdjI4SDEzeiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMWMxYzFhIiBzdHJva2Utd2lkdGg9IjUiLz48cmVjdCB4PSI0MCIgeT0iNDAiIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMyIgZmlsbD0iI2M5MzYyOSIvPjwvc3ZnPgo=" alt=""></a>
+    <h1>Welcome back, <em>Builder</em></h1>
+    <p class="sub">Sign in to continue your course.</p>
+    <form action="#" method="post" onsubmit="return false" autocomplete="on">
+      <label>Email address
+        <input type="email" name="email" autocomplete="username" inputmode="email">
+      </label>
+      <label>Password
+        <input type="password" name="password" autocomplete="current-password">
+      </label>
+      <div class="row"><button type="button" class="tlink">Forgot your password?</button></div>
+      <button type="button" class="btn">Log in</button>
+    </form>
+    <p class="guest">New here? <a href="https://www.aiqbiz.com/">Start free on the AIQbiz home page</a>.</p>
+  </div>
+</main>
+</body>
+</html>
