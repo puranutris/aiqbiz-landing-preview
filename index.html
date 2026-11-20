@@ -206,16 +206,19 @@ a{color:inherit}
 .incl .band .chk svg{width:12px;height:12px;display:block}
 .incl .band .label{color:var(--red)}
 .mapcards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;flex:1;min-width:0}
-.mapcard{padding:22px 16px 8px 0;border-right:1px solid var(--line);display:flex;flex-direction:column;min-width:0}
-.mapcard +.mapcard{padding-left:16px}
+.mapcard{position:relative;padding:22px 16px 28px;border-right:1px solid var(--line);display:flex;flex-direction:column;min-width:0}
+.mapcards .mapcard:first-child{padding-left:0}
 .mapcards .mapcard:last-child{border-right:0;padding-right:0}
 .mapcard .badge{font:500 11px/1.35 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
 .mapcard h3{font:800 clamp(34px,3.8vw,56px)/.85 var(--cond);margin:10px 0 12px;letter-spacing:-.01em;overflow-wrap:anywhere}
 .mapcard .desc{color:#3a3b38;font-size:15px;line-height:1.45}
-.mapcard .inc{margin-top:auto;padding-top:16px;display:flex;align-items:flex-start;gap:8px;color:var(--ink);font:500 11px/1.35 var(--mono);letter-spacing:.04em;text-transform:uppercase}
+.mapcard .inc{margin-top:auto;padding-top:16px;display:flex;align-items:flex-start;gap:8px;color:var(--ink);font:500 11px/1.35 var(--mono);letter-spacing:.02em;text-transform:uppercase}
 .mapcard .inc .tick{width:18px;height:18px;border-radius:50%;background:var(--red);color:var(--paper);display:grid;place-items:center;flex:none;margin-top:1px}
 .mapcard .inc .tick svg{width:10px;height:10px;display:block}
-.mapcard .bar{height:4px;background:var(--line);margin-top:16px;position:relative;overflow:hidden}
+.mapcard .inc .nw{white-space:nowrap}
+.mapcard .bar{height:4px;background:var(--line);position:absolute;left:16px;right:16px;bottom:8px;overflow:hidden}
+.mapcards .mapcard:first-child .bar{left:0}
+.mapcards .mapcard:last-child .bar{right:0}
 .mapcard .bar i{position:absolute;inset:0;background:var(--red)}
 .laterg{display:grid;grid-template-columns:1fr;gap:12px;min-width:0}
 .mapcard.is-next{border:1px dashed rgba(32,33,31,.3);background:var(--paper2);padding:20px 18px 16px;opacity:.86}
@@ -232,8 +235,9 @@ a{color:inherit}
   .incl .band{border-bottom:0;padding:0 0 14px 30px;margin:0}
   .mapcards{grid-template-columns:1fr;position:relative;border-left:2px solid var(--ink);margin-left:10px;padding-left:20px}
   .mapcards::before{content:"";position:absolute;left:-6px;top:-2px;width:10px;height:10px;border-radius:50%;background:var(--red)}
-  .mapcard,.mapcard +.mapcard,.mapcards .mapcard:last-child{padding:18px 0 18px 0;border-right:0;border-bottom:1px solid var(--line)}
+  .mapcard,.mapcard +.mapcard,.mapcards .mapcard:first-child,.mapcards .mapcard:last-child{padding:18px 0 18px 0;border-right:0;border-bottom:1px solid var(--line)}
   .mapcards .mapcard:last-child{border-bottom:0}
+  .mapcard .bar{position:relative;left:auto;right:auto;bottom:auto;margin-top:16px}
   .mapcard{position:relative}
   .mapcard::before{content:"";position:absolute;left:-26px;top:26px;width:10px;height:10px;border-radius:50%;background:var(--red);box-shadow:0 0 0 3px var(--paper)}
   .laterg{grid-template-columns:1fr;gap:0;border-left:2px dashed rgba(32,33,31,.32);margin-left:10px;padding-left:20px}
@@ -635,21 +639,21 @@ footer .wrap{align-items:center}
           <article class="mapcard">
             <span class="badge">Available now</span>
             <h3>BUILD</h3>
-            <p class="desc">Create an AI creator, develop consistent visuals, and learn the workflow behind images and video. This is the first build, and the current course foundation.</p>
-            <p class="inc"><span class="tick"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.15 12.05 2.4 8.3l1.4-1.4 2.35 2.35 6.05-6.15 1.4 1.4z"/></svg></span><span>Included in Founding Edition · Lifetime</span></p>
+            <p class="desc">Create an AI creator, develop consistent visuals, and learn the workflow behind images and video.</p>
+            <p class="inc"><span class="tick"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.15 12.05 2.4 8.3l1.4-1.4 2.35 2.35 6.05-6.15 1.4 1.4z"/></svg></span><span>Included in Founding Edition <span class="nw">· Lifetime</span></span></p>
             <div class="bar"><i></i></div>
           </article>
           <article class="mapcard">
             <span class="badge">December 1, 2026</span>
             <h3>GROW</h3>
-            <p class="desc">How content can become reach, attention and a repeatable growth system, once that work is ready.</p>
-            <p class="inc"><span class="tick"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.15 12.05 2.4 8.3l1.4-1.4 2.35 2.35 6.05-6.15 1.4 1.4z"/></svg></span><span>Included in Founding Edition · Lifetime</span></p>
+            <p class="desc">Turn content into reach, attention and a repeatable growth system.</p>
+            <p class="inc"><span class="tick"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.15 12.05 2.4 8.3l1.4-1.4 2.35 2.35 6.05-6.15 1.4 1.4z"/></svg></span><span>Included in Founding Edition <span class="nw">· Lifetime</span></span></p>
           </article>
           <article class="mapcard">
             <span class="badge">December 15, 2026</span>
             <h3>MONETIZE</h3>
-            <p class="desc">Connecting content, audience and offer into a business model, when the material is developed and tested.</p>
-            <p class="inc"><span class="tick"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.15 12.05 2.4 8.3l1.4-1.4 2.35 2.35 6.05-6.15 1.4 1.4z"/></svg></span><span>Included in Founding Edition · Lifetime</span></p>
+            <p class="desc">Connect content, audience and offer into a working business model.</p>
+            <p class="inc"><span class="tick"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.15 12.05 2.4 8.3l1.4-1.4 2.35 2.35 6.05-6.15 1.4 1.4z"/></svg></span><span>Included in Founding Edition <span class="nw">· Lifetime</span></span></p>
           </article>
         </div>
       </div>
