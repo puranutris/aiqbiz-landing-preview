@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AIQbiz · Free starter: modules 1–3 (preview)</title>
-<meta name="description" content="Start the AIQbiz BUILD path free: 22 lessons in modules 1–3, Welcome to AIQbiz, The AI Creator Landscape and Your First Build.">
+<meta name="description" content="Start the AIQbiz BUILD path free: 20 lessons in modules 1–3, Welcome to AIQbiz, The AI Creator Landscape and Your First Build.">
 <meta name="robots" content="noindex,nofollow">
-<link rel="icon" href="../assets/mark.svg" type="image/svg+xml">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSIjZjRmM2VmIi8+PHBhdGggZD0iTTEzIDE4aDMwdjI4SDEzeiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMWMxYzFhIiBzdHJva2Utd2lkdGg9IjUiLz48cmVjdCB4PSI0MCIgeT0iNDAiIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMyIgZmlsbD0iI2M5MzYyOSIvPjwvc3ZnPgo=" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
@@ -490,19 +490,40 @@ footer .legal{margin-top:22px;padding-top:18px;border-top:1px solid var(--lineD)
   .mbar .p small{max-width:170px}
 }
 .finside .modsum span{max-width:260px}
+/* v2: lesson lists, where-it-leads, compact founding line */
+.flede{margin:-12px 0 clamp(28px,4vh,44px);max-width:720px;font:400 clamp(20px,2vw,26px)/1.3 var(--serif);color:#3a3b38}
+.fmods li{grid-template-rows:auto auto 1fr}
+.lessons{list-style:none;counter-reset:ls;border-top:1px solid var(--line);margin-top:2px}
+.lessons li{counter-increment:ls;display:grid!important;grid-template-columns:34px 1fr;gap:8px;padding:10px 0!important;border:0!important;border-bottom:1px solid var(--line)!important;font-size:15.5px;line-height:1.4;color:#2b2c29;background:none!important}
+.lessons li::before{content:counter(ls,decimal-leading-zero);font:500 12px/1.9 var(--mono);color:var(--red)}
+.fnext{background:var(--ink);color:var(--paper);padding-block:var(--sec)}
+.fngrid{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(30px,5vw,90px);align-items:center}
+.fnvid video{width:100%;aspect-ratio:16/9;object-fit:cover;background:#111;border-radius:2px}
+.fncap{display:block;margin-top:12px;color:rgba(244,243,239,.6)}
+.fntext h2{font:800 clamp(46px,5.4vw,88px)/.9 var(--cond);text-transform:uppercase;margin-top:14px}
+.fntext h2 em{font:italic 400 .8em/1 var(--serif);text-transform:none;color:#e7776d}
+.fntext>p{margin-top:20px;color:rgba(244,243,239,.78);max-width:460px}
+.fline{margin-top:30px;border-top:1px solid var(--lineD);padding-top:20px;max-width:480px}
+.fline p{color:rgba(244,243,239,.9);font-size:16px}
+.fline b{color:var(--paper)}
+.flinks{display:flex;gap:24px;flex-wrap:wrap;margin-top:14px}
+.flinks .tlink{color:var(--paper)}
+.flinks .tlink:hover{color:#e7776d}
+.fmods .pill{background:var(--ink);color:var(--paper)}
+@media (max-width:1100px){.fngrid{grid-template-columns:1fr}}
+@media (max-width:860px){.lessons li{font-size:15px}}
 </style>
 </head>
 <body>
 <a class="skip" href="#top">Skip to content</a>
 <header class="nav" id="nav">
   <div class="wrap">
-    <a class="brand" href="https://www.aiqbiz.com/" aria-label="AIQbiz home"><img src="../assets/mark.svg" alt=""><span>AI<b>Q</b>biz</span></a>
+    <a class="brand" href="https://www.aiqbiz.com/" aria-label="AIQbiz home"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSIjZjRmM2VmIi8+PHBhdGggZD0iTTEzIDE4aDMwdjI4SDEzeiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMWMxYzFhIiBzdHJva2Utd2lkdGg9IjUiLz48cmVjdCB4PSI0MCIgeT0iNDAiIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMyIgZmlsbD0iI2M5MzYyOSIvPjwvc3ZnPgo=" alt=""><span>AI<b>Q</b>biz</span></a>
     <ul>
-      <li><a href="#inside">Inside</a></li>
-      <li><a href="#build">The build</a></li>
-      <li><a href="#cases">Case studies</a></li>
-      <li><a href="#founding">Founding Edition</a></li>
-      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#inside">The lessons</a></li>
+      <li><a href="#build">What you build</a></li>
+      <li><a href="#team">Founders</a></li>
+      <li><a href="#faq">Signup FAQ</a></li>
     </ul>
     <div class="right">
       <a class="tlink login" href="https://www.aiqbiz.com/login">Login</a>
@@ -518,17 +539,17 @@ footer .legal{margin-top:22px;padding-top:18px;border-top:1px solid var(--lineD)
     <div>
       <div class="kicker label" data-hero><i></i>Free starter · Modules 1–3</div>
       <h1>
-        <span class="ln"><span>22 lessons.</span></span>
+        <span class="ln"><span>20 lessons.</span></span>
         <span class="ln"><span class="q">Free.</span></span>
         <span class="ln sub"><span><em>Start the first build.</em></span></span>
       </h1>
       <div class="lede">
         <div>
-          <p data-hero>Welcome to AIQbiz, The AI Creator Landscape and Your First Build. Real prompts, exact steps, and Ava and Ethan as worked examples, from the creator brief to a trained Soul ID.</p>
+          <p data-hero>Welcome to AIQbiz, The AI Creator Landscape and Your First Build. You plan an AI creator, create the base image and train its Soul ID, with Ava and Ethan as worked examples.</p>
           <ul class="fpoints" data-hero>
-            <li><span class="tick"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.15 12.05 2.4 8.3l1.4-1.4 2.35 2.35 6.05-6.15 1.4 1.4z"/></svg></span>22 free lessons in modules 1–3</li>
+            <li><span class="tick"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.15 12.05 2.4 8.3l1.4-1.4 2.35 2.35 6.05-6.15 1.4 1.4z"/></svg></span>20 free lessons in modules 1–3</li>
             <li><span class="tick"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.15 12.05 2.4 8.3l1.4-1.4 2.35 2.35 6.05-6.15 1.4 1.4z"/></svg></span>Name and email, no payment details</li>
-            <li><span class="tick"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.15 12.05 2.4 8.3l1.4-1.4 2.35 2.35 6.05-6.15 1.4 1.4z"/></svg></span>Part of the 38-lesson BUILD path</li>
+            <li><span class="tick"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.15 12.05 2.4 8.3l1.4-1.4 2.35 2.35 6.05-6.15 1.4 1.4z"/></svg></span>For freelancers, creators and small businesses</li>
           </ul>
         </div>
       </div>
@@ -552,34 +573,57 @@ footer .legal{margin-top:22px;padding-top:18px;border-top:1px solid var(--lineD)
         <button class="btn sbtn" type="submit">Get free access <span class="arr">→</span></button>
         <p class="snote" role="status" aria-live="polite" hidden>Design preview: this form does not send anything. On aiqbiz.com the systeme.io form handles signup.</p>
       </form>
-      <p class="safter">After signup, open the course and begin with the welcome lesson.</p>
+      <p class="safter">After signup, open the course and begin with Your Starting Point.</p>
     </div>
   </div>
 </section>
 
-<!-- INSIDE -->
+<!-- THE LESSONS -->
 <section class="finside" id="inside">
   <div class="wrap">
     <div class="sechead">
-      <span class="label" data-r>Free 01 · What's inside</span>
-      <h2 data-r>Three modules.<br><em>22 free lessons.</em></h2>
+      <span class="label" data-r>Free 01 · Every free lesson</span>
+      <h2 data-r>Three modules.<br><em>20 lessons, listed.</em></h2>
     </div>
-    <div class="modsum" data-r><div><b>22</b><span>free lessons in modules 1–3</span></div><div><b>38</b><span>lessons in the full BUILD path</span></div></div>
+    <p class="flede" data-r>This is exactly what opens after signup. The free modules are the start of the 36-lesson BUILD path.</p>
     <ol class="fmods">
       <li data-r>
         <span class="n">01</span>
-        <div class="mt"><h3>Welcome to AIQbiz</h3><span class="tags"><span class="lc">6 lessons</span><span class="pill free label">Free</span></span></div>
-        <p>How the course works and the tools you will use. Includes How We Work and Useful Tools.</p>
+        <div class="mt"><h3>Welcome to AIQbiz</h3><span class="tags"><span class="lc">4 lessons</span><span class="pill label">Free</span></span></div>
+        <ol class="lessons">
+          <li>Your Starting Point</li>
+          <li>Useful Tools</li>
+          <li>Your Founding Member Benefits</li>
+          <li>How We Work</li>
+        </ol>
       </li>
       <li data-r>
         <span class="n">02</span>
-        <div class="mt"><h3>The AI Creator Landscape</h3><span class="tags"><span class="lc">5 lessons</span><span class="pill free label">Free</span></span></div>
-        <p>Where We Stand Right Now, Language Models in Your Workflow, Higgsfield at a Glance, Images vs. Video, and How to Prompt.</p>
+        <div class="mt"><h3>The AI Creator Landscape</h3><span class="tags"><span class="lc">5 lessons</span><span class="pill label">Free</span></span></div>
+        <ol class="lessons">
+          <li>Where We Stand Right Now</li>
+          <li>Language Models in Your Workflow</li>
+          <li>Higgsfield at a Glance</li>
+          <li>Images vs. Video</li>
+          <li>How to Prompt</li>
+        </ol>
       </li>
       <li data-r>
         <span class="n">03</span>
-        <div class="mt"><h3>Your First Build</h3><span class="tags"><span class="lc">11 lessons</span><span class="pill free label">Free</span></span></div>
-        <p>Plan your creator, study the Ethan and Ava case studies, write your creator brief, create your base image, then train and test your Soul ID.</p>
+        <div class="mt"><h3>Your First Build</h3><span class="tags"><span class="lc">11 lessons</span><span class="pill label">Free</span></span></div>
+        <ol class="lessons">
+          <li>Your First Build</li>
+          <li>Plan Your Creator</li>
+          <li>Case Study — Ethan Cole</li>
+          <li>Case Study — Ava Pearson</li>
+          <li>Your Creator Brief</li>
+          <li>The Image Bar: How to Generate an Image in Higgsfield</li>
+          <li>Create Your Base Image</li>
+          <li>The Soul ID</li>
+          <li>Soul ID Prompts</li>
+          <li>Start the Soul ID Training</li>
+          <li>Test Your Soul ID</li>
+        </ol>
       </li>
     </ol>
   </div>
@@ -590,142 +634,82 @@ footer .legal{margin-top:22px;padding-top:18px;border-top:1px solid var(--lineD)
   <div class="wrap mgrid">
     <div class="msticky">
       <span class="label red">Free 02 · What you build</span>
-      <h2 style="margin-top:14px">Your first creator. <em>Step by step.</em></h2>
-      <p>Module 3 takes you from an idea to a creator whose face holds across images. Every step shows the real decision, including the tests that drifted.</p>
+      <h2 style="margin-top:14px">Your first creator. <em>By the end of module 3.</em></h2>
+      <p>Four steps, each with the real decision behind it. Ava and Ethan run through the same steps as case studies, including the tests that drifted.</p>
       <div class="imgbox">
-        <img class="on" data-step="0" src="../assets/creator-brief.webp" alt="Creator brief board for Ava" loading="lazy">
-        <img data-step="1" src="../assets/ava-base-workflow.webp" alt="Base image workflow" loading="lazy">
-        <img data-step="2" src="../assets/ava-studio.webp" alt="Ava in a production studio scene" loading="lazy">
-        <img data-step="3" src="../assets/ava-hair-corrected.webp" alt="Corrected result matching Ava's reference" loading="lazy">
+        <img class="on" data-step="0" src="https://d1yei2z3i6k35z.cloudfront.net/10889192/6b00980751fe86.14905882_aiqbiz-home-creator-brief.webp" alt="Creator brief board for Ava" loading="lazy">
+        <img data-step="1" src="https://d1yei2z3i6k35z.cloudfront.net/10889192/6b009801cd11b8.58515052_aiqbiz-home-ava-base-workflow.webp" alt="Base image workflow" loading="lazy">
+        <img data-step="2" src="https://d1yei2z3i6k35z.cloudfront.net/10889192/6b009801e28339.07530066_aiqbiz-home-ava-nat-01.webp" alt="Ava, consistent face after Soul ID training" loading="lazy">
+        <img data-step="3" src="https://d1yei2z3i6k35z.cloudfront.net/10889192/6b009801e3e104.59837545_aiqbiz-home-ava-hair-corrected.webp" alt="Corrected result matching Ava's reference" loading="lazy">
       </div>
-      <div class="cap label" id="mcap">Creator brief · course material</div>
+      <div class="cap label" id="mcap">Ava's creator brief · module 3</div>
     </div>
     <ol class="steps">
-      <li data-cap="Creator brief · course material"><span class="num">01</span><div><span class="label">Plan</span><h3>Plan your creator</h3><p>Decide who the creator is, who they speak to and what they stand for, then write it down in your creator brief.</p></div></li>
-      <li data-cap="Base image workflow · course material"><span class="num">02</span><div><span class="label">Make</span><h3>Create your base image</h3><p>Generate the base image in Higgsfield with the image bar, compare the results and pick the one that carries your creator.</p></div></li>
-      <li data-cap="Ava · studio scene"><span class="num">03</span><div><span class="label">Train</span><h3>Train the Soul ID</h3><p>Use the Soul ID prompts and start the training, so the same face can move through different scenes.</p></div></li>
-      <li data-cap="Ava · corrected test"><span class="num">04</span><div><span class="label">Test</span><h3>Test your Soul ID</h3><p>Run the tests, name what drifted, change one thing and run the next deliberate test.</p></div></li>
+      <li data-cap="Ava's creator brief · module 3"><span class="num">01</span><div><span class="label">Plan</span><h3>Plan your creator</h3><p>Decide who the creator is, who they speak to and what they stand for, then write it down in your creator brief.</p></div></li>
+      <li data-cap="Base image workflow · module 3"><span class="num">02</span><div><span class="label">Make</span><h3>Create your base image</h3><p>Generate the base image in Higgsfield with the image bar, compare the results and pick the one that carries your creator.</p></div></li>
+      <li data-cap="Ava after Soul ID training · module 3"><span class="num">03</span><div><span class="label">Train</span><h3>Train the Soul ID</h3><p>Use the Soul ID prompts and start the training, so the same face can move through different scenes.</p></div></li>
+      <li data-cap="Ava · corrected test · module 3"><span class="num">04</span><div><span class="label">Test</span><h3>Test your Soul ID</h3><p>Run the tests, name what drifted, change one thing and run the next deliberate test.</p></div></li>
     </ol>
   </div>
 </section>
 
-<!-- CASE STUDIES -->
-<section class="cast wrap" id="cases">
+<!-- WHERE IT LEADS: worlds video + compact Founding line -->
+<section class="fnext" id="next">
+  <div class="wrap fngrid">
+    <div class="fnvid" data-r>
+      <video class="vid" autoplay muted loop playsinline preload="metadata" poster="https://d1yei2z3i6k35z.cloudfront.net/10889192/6b009806e504c6.11303751_aiqbiz-home-ava-worlds-poster.webp" aria-label="Ava Walks Through the Worlds: a 30-second film from the course, AI-generated" disablepictureinpicture><source src="https://d1yei2z3i6k35z.cloudfront.net/10889192/6b009806b41a90.50052154_aiqbiz-home-ava-worlds-720.mp4" type="video/mp4" media="(min-width: 700px)"><source src="https://d1yei2z3i6k35z.cloudfront.net/10889192/6b009806893147.56582366_aiqbiz-home-ava-worlds-360.mp4" type="video/mp4"></video>
+      <span class="label fncap">Ava Walks Through the Worlds · 30 s · one start image, one prompt</span>
+    </div>
+    <div class="fntext">
+      <span class="label" style="color:#e7776d" data-r>Free 03 · Where the path leads</span>
+      <h2 data-r>The same face.<br><em>Then it moves.</em></h2>
+      <p data-r>The Soul ID you train in module 3 is what keeps Ava recognisable here. This film is the worked example in The Language of Video, module 6 of BUILD.</p>
+      <div class="fline" data-r>
+        <p><b>Founding Edition:</b> lifetime BUILD, GROW (Dec 1) & MONETIZE (Dec 15), $97 once.</p>
+        <div class="flinks"><a class="tlink" href="https://www.aiqbiz.com/#offer">See what's included →</a><a class="tlink" href="https://www.aiqbiz.com/founding-edition-checkout">Join the Builders</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDERS -->
+<section class="team wrap" id="team" aria-label="The people behind AIQbiz">
   <div class="sechead">
-    <span class="label" data-r>Free 03 · The case studies</span>
-    <h2 data-r>Ava and Ethan.<br><em>Both inside module 3.</em></h2>
+    <span class="label" data-r>Free 04 · The people behind AIQbiz</span>
+    <h2 data-r>Two founders.<br><em>One course.</em></h2>
   </div>
-  <div class="duo">
-    <article class="card a">
-      <div class="media"><video class="vid par" src="../assets/ava-studio-loop.mp4" poster="../assets/ava-studio-loop-poster.webp" muted loop playsinline preload="none" aria-label="Ava Pearson motion clip"></video><div class="name">Ava</div></div>
-      <div class="meta" data-r><span class="label">Pearson</span><div><h3>Creative, expressive, experimental.</h3><p>Her case study shows the discovery path from a visual starting point to a recognisable creator.</p></div></div>
+  <div class="tgrid">
+    <article class="fcard" data-r>
+      <div class="fimg"><img src="https://d1yei2z3i6k35z.cloudfront.net/10889192/6b00980b721a60.99820480_aiqbiz-home-founder-andreas.webp" alt="Andreas, founder of AIQbiz" width="720" height="900" loading="lazy" decoding="async"></div>
+      <div class="ftext">
+        <span class="label">Founder</span>
+        <h3>Andreas</h3>
+        <p class="cred one"><span class="nw">Business Informatics (B.Sc.) ·</span> <span class="nw">Software Engineer</span></p>
+        <p>20 years of building businesses — the foundation of AIQbiz.</p>
+      </div>
     </article>
-    <article class="card e">
-      <div class="media"><video class="vid par" src="../assets/ethan-out-loop.mp4" poster="../assets/ethan-out-loop-poster.webp" muted loop playsinline preload="none" aria-label="Ethan Cole motion clip"></video><div class="name">Ethan</div></div>
-      <div class="meta" data-r><span class="label">Cole</span><div><h3>Calm, analytical, strategic.</h3><p>His case study shows the design path from a defined concept to a grounded character.</p></div></div>
+    <article class="fcard" data-r>
+      <div class="fimg"><img src="https://d1yei2z3i6k35z.cloudfront.net/10889192/6b00980b992bd6.84751842_aiqbiz-home-founder-diana.webp" alt="Diana, co-founder of AIQbiz" width="720" height="900" loading="lazy" decoding="async"></div>
+      <div class="ftext">
+        <span class="label">Co-founder</span>
+        <h3>Diana</h3>
+        <p class="cred one"><span class="nw">Media Informatics ·</span> <span class="nw">AI Engineer</span></p>
+        <p>She builds the AI creators you see on this page — Ava and Ethan.</p>
+      </div>
     </article>
   </div>
-  <p class="note" data-r>Ava and Ethan are AI-generated digital hosts, created through real production work. <b>You see how they were built.</b></p>
-  <p data-r style="margin-top:14px;color:var(--mute);font-size:15px;max-width:640px">Their development is used as a case study, not as a promise of what your own project will do.</p>
 </section>
 
-<!-- FOUNDING PATH -->
-<section class="map" id="founding" aria-label="After the free modules">
-  <div class="wrap">
-    <div class="sechead">
-      <span class="label" data-r>Free 04 · After the free modules</span>
-      <h2 data-r>Keep building.<br><em>Three stages for life.</em></h2>
-    </div>
-    <p class="maplede" data-r>The Founding Edition: $97 once for all 38 BUILD lessons now, GROW on December 1, MONETIZE on December 15, 2026, and every update to these three stages.</p>
-    <div class="maptrack" data-r>
-      <div class="incl">
-        <div class="band">
-          <span class="chk"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.15 12.05 2.4 8.3l1.4-1.4 2.35 2.35 6.05-6.15 1.4 1.4z"/></svg></span>
-          <span class="label">Your Founder Lifetime Access</span>
-        </div>
-        <div class="mapcards">
-          <article class="mapcard">
-            <span class="badge">Available now</span>
-            <h3>BUILD</h3>
-            <p class="desc">38 lessons: the 22 free lessons plus modules 4–6, What Your Soul ID Can Do, Getting the Image You Want and The Language of Video.</p>
-            <p class="inc"><span class="tick"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.15 12.05 2.4 8.3l1.4-1.4 2.35 2.35 6.05-6.15 1.4 1.4z"/></svg></span><span>Included in Founding Edition <span class="nw">· Lifetime</span></span></p>
-            <div class="bar"><i></i></div>
-          </article>
-          <article class="mapcard">
-            <span class="badge">December 1, 2026</span>
-            <h3>GROW</h3>
-            <p class="desc">Turn content into reach, attention and a repeatable growth system.</p>
-            <p class="inc"><span class="tick"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.15 12.05 2.4 8.3l1.4-1.4 2.35 2.35 6.05-6.15 1.4 1.4z"/></svg></span><span>Included in Founding Edition <span class="nw">· Lifetime</span></span></p>
-          </article>
-          <article class="mapcard">
-            <span class="badge">December 15, 2026</span>
-            <h3>MONETIZE</h3>
-            <p class="desc">Connect content, audience and offer into a working business model.</p>
-            <p class="inc"><span class="tick"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.15 12.05 2.4 8.3l1.4-1.4 2.35 2.35 6.05-6.15 1.4 1.4z"/></svg></span><span>Included in Founding Edition <span class="nw">· Lifetime</span></span></p>
-          </article>
-        </div>
-      </div>
-      <div class="laterg">
-        <article class="mapcard is-next">
-          <span class="badge">In progress</span>
-          <h3>ADVANCED</h3>
-          <p class="out">Not part of the Founding Edition</p>
-        </article>
-        <article class="mapcard is-next">
-          <span class="badge">In progress</span>
-          <h3>AUTOMATE</h3>
-          <p class="out">Not part of the Founding Edition</p>
-        </article>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- OFFER -->
-<section class="offer" id="offer">
-  <div class="wrap ogrid">
-    <div>
-      <span class="label" style="color:#e7776d" data-r>Free 05 · The Founding Edition</span>
-      <h2 style="margin-top:14px" data-r>Start free.<br><em>Unlock the rest once.</em></h2>
-      <p class="intro" data-r>When modules 1–3 have done their job, the Founding Edition opens the rest of BUILD and adds GROW and MONETIZE, with every update to these three stages.</p>
-      <ol class="stack" data-r>
-        <li><span>01</span><div><b>Modules 4 to 6 · 16 lessons</b>What Your Soul ID Can Do, Getting the Image You Want, The Language of Video. Together with the 22 free lessons: 38 lessons in total.</div></li>
-        <li><span>02</span><div><b>GROW and MONETIZE</b>GROW on December 1, 2026 and MONETIZE on December 15, 2026, included for life.</div></li>
-        <li><span>03</span><div><b>The real working material</b>Real prompts, exact steps, settings, tests, mistakes and fixes.</div></li>
-      </ol>
-    </div>
-    <div class="ticket" data-r>
-      <span class="label">AIQbiz Builders · Founding Edition</span>
-      <h3>Lifetime access: BUILD, GROW & MONETIZE</h3>
-      <div class="price"><sup>$</sup>97</div>
-      <p class="sub">$97 once + every update to these three stages.</p>
-      <div class="life">
-        <p class="lifeh">Lifetime access: BUILD, GROW & MONETIZE + every update to these three stages</p>
-        <div class="lifecols">
-          <div><span class="tick"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.15 12.05 2.4 8.3l1.4-1.4 2.35 2.35 6.05-6.15 1.4 1.4z"/></svg></span><div><b>BUILD</b><span>Available now · 38 lessons</span></div></div>
-          <div><span class="tick"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.15 12.05 2.4 8.3l1.4-1.4 2.35 2.35 6.05-6.15 1.4 1.4z"/></svg></span><div><b>GROW</b><span>December 1, 2026</span></div></div>
-          <div><span class="tick"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.15 12.05 2.4 8.3l1.4-1.4 2.35 2.35 6.05-6.15 1.4 1.4z"/></svg></span><div><b>MONETIZE</b><span>December 15, 2026</span></div></div>
-        </div>
-        <p class="subnote">ADVANCED & AUTOMATE: in progress, not part of the Founding Edition</p>
-      </div>
-      <a class="btn" href="https://www.aiqbiz.com/founding-edition-checkout">Join the Builders <span class="arr">→</span></a>
-      <p class="alt"><a class="tlink" href="#signup">Or start with the 22 free lessons</a></p>
-      <p class="fine">Provider accounts and tool costs (Higgsfield, ElevenLabs) are separate from AIQbiz and can change.</p>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
+<!-- SIGNUP FAQ -->
 <section class="faq wrap" id="faq">
   <div class="fgrid">
-    <div><span class="label red" data-r>Free 06 · Questions</span><h2 style="margin-top:14px" data-r>Clear <em>before you start.</em></h2></div>
+    <div><span class="label red" data-r>Free 05 · Signup questions</span><h2 style="margin-top:14px" data-r>Before <em>you sign up.</em></h2></div>
     <div>
-      <details><summary>Are the first three modules really free?<span class="pm"></span></summary><p>Yes. The separate free product provides access to modules 1–3: 22 lessons. The signup step asks for your name and email, then sends you to the course.</p></details>
-      <details><summary>What happens after I sign up?<span class="pm"></span></summary><p>You receive an email with the subject “Important: Your access to training”. Click the link, choose your password, and you are taken straight to your course. If you already have an account with us, log in with your usual password.</p></details>
-      <details><summary>Who is the free path for?<span class="pm"></span></summary><p>AIQbiz is for business customers. The signup asks you to confirm that you are acting for your trade, business or self-employed professional activity.</p></details>
-      <details><summary>Do I have to show my face?<span class="pm"></span></summary><p>No. The point of the course is an AI creator who is the face of your content, the way Ava and Ethan are. You stay behind the camera.</p></details>
-      <details><summary>Do I need Higgsfield or ElevenLabs?<span class="pm"></span></summary><p>The source workflows use Higgsfield for images, video and Soul ID, and ElevenLabs for a designed creator voice. Provider accounts and their changing costs are separate from AIQbiz.</p></details>
-      <details><summary>What does the Founding Edition add?<span class="pm"></span></summary><p>$97 once: all 38 BUILD lessons now, GROW on December 1, MONETIZE on December 15, 2026, and every update to these three stages. ADVANCED and AUTOMATE are in progress and are not part of the Founding Edition.</p></details>
+      <details open><summary>Who can sign up?<span class="pm"></span></summary><p>AIQbiz is for business customers only: freelancers, creators and small businesses who use it for their work. At signup you confirm that you are acting for your trade, business or self-employed professional activity, not predominantly for private purposes, and you accept the Terms for Business Customers.</p></details>
+      <details><summary>What happens after I sign up?<span class="pm"></span></summary><p>You receive an email with the subject “Important: Your access to training”. Click the link, choose your password, and you are taken straight to your course. The email can take a few minutes; check your spam or promotions folder if you do not see it.</p></details>
+      <details><summary>I already have an account. Do I sign up again?<span class="pm"></span></summary><p>Log in with your usual password. No new password is needed.</p></details>
+      <details><summary>Do I have to pay anything?<span class="pm"></span></summary><p>No. The signup asks only for your name and email, no payment details. The Founding Edition is a separate, optional one-time purchase.</p></details>
+      <details><summary>No email after 10 minutes?<span class="pm"></span></summary><p>Write to us at <a href="mailto:team@aiqbiz.com">team@aiqbiz.com</a>.</p></details>
     </div>
   </div>
 </section>
@@ -733,24 +717,23 @@ footer .legal{margin-top:22px;padding-top:18px;border-top:1px solid var(--lineD)
 <!-- END -->
 <section class="end">
   <div class="wrap">
-    <span class="label" data-r>Free 07 · AIQbiz Builders</span>
-    <h2 data-r>Start with<br><em>the first build.</em></h2>
+    <span class="label" data-r>Free 06 · Your starting point</span>
+    <h2 data-r>20 lessons.<br><em>Name and email.</em></h2>
     <div class="row">
-      <p data-r>22 free lessons in modules 1–3. Name and email, then you are in the course. Continue with the Founding Edition when you are ready.</p>
+      <p data-r>Modules 1–3 open after signup. Begin with Your Starting Point and build your first creator.</p>
       <div class="ctas" data-r>
         <a class="btn" href="#signup">Get free access <span class="arr">→</span></a>
-        <a class="tlink" href="https://www.aiqbiz.com/founding-edition-checkout">Join the Builders · $97 once</a>
       </div>
     </div>
   </div>
 </section>
 </main>
 
-<div class="mbar" id="mbar" aria-label="Get free access"><div class="p">Free<small>22 lessons · modules 1–3</small></div><a class="btn" href="#signup">Get free access</a></div>
+<div class="mbar" id="mbar" aria-label="Get free access"><div class="p">Free<small>20 lessons · modules 1–3</small></div><a class="btn" href="#signup">Get free access</a></div>
 
 <footer>
   <div class="wrap">
-    <a class="fbrand" href="https://www.aiqbiz.com/" aria-label="AIQbiz home"><img src="../assets/mark.svg" alt=""><span>AI<b>Q</b>biz</span></a>
+    <a class="fbrand" href="https://www.aiqbiz.com/" aria-label="AIQbiz home"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSIjZjRmM2VmIi8+PHBhdGggZD0iTTEzIDE4aDMwdjI4SDEzeiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMWMxYzFhIiBzdHJva2Utd2lkdGg9IjUiLz48cmVjdCB4PSI0MCIgeT0iNDAiIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMyIgZmlsbD0iI2M5MzYyOSIvPjwvc3ZnPgo=" alt=""><span>AI<b>Q</b>biz</span></a>
     <p class="disc">AIQbiz is an educational course. No earnings claims, guarantees or invented results are made. Tool accounts and tool costs are separate. Ava Pearson and Ethan Cole are AI-generated.</p>
     <nav><a href="https://www.aiqbiz.com/login">Login</a><a href="https://www.aiqbiz.com/contact">Contact</a><a href="https://www.aiqbiz.com/imprint">Imprint</a><a href="https://www.aiqbiz.com/privacy">Privacy</a><a href="https://www.aiqbiz.com/terms">Terms</a></nav>
   </div>
@@ -772,7 +755,7 @@ footer .legal{margin-top:22px;padding-top:18px;border-top:1px solid var(--lineD)
   function mState(){ mbar.classList.toggle('on', window.scrollY > hero.offsetHeight*0.8 && inView===0); }
   if('IntersectionObserver' in window){
     var mo=new IntersectionObserver(function(es){ es.forEach(function(e){ inView+= e.isIntersecting?1:-1; if(inView<0)inView=0; }); mState(); });
-    [].slice.call(document.querySelectorAll('#signup,.ticket,.end,footer')).forEach(function(el){ mo.observe(el); });
+    [].slice.call(document.querySelectorAll('#signup,.end,footer')).forEach(function(el){ mo.observe(el); });
   }
   window.addEventListener('scroll', mState, {passive:true}); mState();
 
@@ -809,14 +792,9 @@ footer .legal{margin-top:22px;padding-top:18px;border-top:1px solid var(--lineD)
       .from('.signup',{clipPath:'inset(0 0 100% 0)',duration:1.2,ease:'expo.out'},'<');
     gsap.to('.hero h1',{yPercent:-10,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
     gsap.utils.toArray('[data-r]').forEach(function(el){ gsap.to(el,{opacity:1,y:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%',once:true}}); });
-    gsap.utils.toArray('.card .media').forEach(function(m){
-      gsap.fromTo(m.querySelector('.par'),{yPercent:-8},{yPercent:0,ease:'none',scrollTrigger:{trigger:m,start:'top bottom',end:'bottom top',scrub:true}});
-      gsap.from(m.querySelector('.name'),{yPercent:60,opacity:0,duration:1.1,ease:'power4.out',scrollTrigger:{trigger:m,start:'top 70%',once:true}});
-      gsap.from(m,{clipPath:'inset(12% 8% 12% 8%)',duration:1.3,ease:'expo.out',scrollTrigger:{trigger:m,start:'top 85%',once:true}});
-    });
+    gsap.from('.fnvid video',{clipPath:'inset(10% 6% 10% 6%)',duration:1.3,ease:'expo.out',scrollTrigger:{trigger:'.fnvid',start:'top 85%',once:true}});
+    gsap.utils.toArray('.lessons').forEach(function(l){ gsap.from(l.children,{opacity:0,x:-14,duration:.6,stagger:.04,ease:'power2.out',scrollTrigger:{trigger:l,start:'top 85%',once:true}}); });
     gsap.from('.fmods .n',{yPercent:60,opacity:0,duration:1,stagger:.12,ease:'power3.out',scrollTrigger:{trigger:'.fmods',start:'top 80%',once:true}});
-    gsap.from('.mapcard .bar i',{scaleX:0,transformOrigin:'0 50%',duration:1.6,ease:'power3.inOut',scrollTrigger:{trigger:'.maptrack',start:'top 80%',once:true}});
-    gsap.from('.price',{yPercent:30,opacity:0,duration:1,ease:'back.out(1.6)',scrollTrigger:{trigger:'.ticket',start:'top 75%',once:true}});
     window.addEventListener('load',function(){ ScrollTrigger.refresh(); });
     setTimeout(function(){ ScrollTrigger.refresh(); },1200);
   }
