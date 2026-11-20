@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AIQbiz · We show you the build.</title>
-<meta name="description" content="AIQbiz is a practical course for building with AI. The first build is an AI creator; then GROW, then MONETIZE. Real prompts, exact steps, settings, tests, mistakes and fixes, with Ava Pearson and Ethan Cole as working case studies.">
+<meta name="description" content="AIQbiz is a practical course for building with AI. BUILD is available now; GROW follows on December 1, 2026 and MONETIZE on December 15, 2026. Real prompts, exact steps, settings, tests, mistakes and fixes, with Ava Pearson and Ethan Cole as working case studies.">
 <meta name="robots" content="noindex">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/puranutris/aiqbiz-landing-preview@b08dffaf969198371c9071a2f37bae490fcdf765/assets/mark.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -196,17 +196,71 @@ a{color:inherit}
 .modsum div{display:flex;align-items:baseline;gap:12px}
 .modsum b{font:800 clamp(48px,5vw,76px)/.85 var(--cond)}
 .modsum span{font-size:16px;color:#3a3b38;max-width:200px;line-height:1.35}
-.road{display:grid;grid-template-columns:1.3fr 1fr 1fr;margin-top:64px;border-top:1px solid var(--ink)}
-.road>div{padding:26px 26px 10px 0;border-right:1px solid var(--line)}
-.road>div+div{padding-left:26px}
-.road>div:last-child{border-right:0}
-.road h3{font:800 clamp(52px,5.6vw,88px)/.85 var(--cond);margin:10px 0 14px}
-.road .later h3{color:transparent;-webkit-text-stroke:1.5px var(--mute)}
-.road .label{color:var(--red)}
-.road .later .label{color:var(--mute)}
-.road p{color:#3a3b38;max-width:420px;font-size:16px}
-.road .bar{height:4px;background:var(--line);margin-top:22px;position:relative;overflow:hidden}
-.road .bar i{position:absolute;inset:0;background:var(--red);transform-origin:left;transform:scaleX(1)}
+/* course roadmap */
+.map{background:var(--paper);padding-block:var(--secL);border-top:1px solid var(--line)}
+.map .maplede{margin:-12px 0 clamp(36px,5vh,56px);max-width:720px;font:400 clamp(20px,2.05vw,28px)/1.3 var(--serif);color:#3a3b38}
+.maptrack{display:grid;grid-template-columns:minmax(0,1.72fr) minmax(0,1fr);gap:clamp(16px,2vw,28px);align-items:stretch}
+.incl{border:1.5px solid var(--ink);background:#fff;padding:18px 18px 16px;display:flex;flex-direction:column;min-width:0;border-radius:2px}
+.incl .band{display:flex;align-items:center;gap:10px;margin-bottom:2px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.incl .band .chk{width:22px;height:22px;border-radius:50%;background:var(--red);color:var(--paper);display:grid;place-items:center;flex:none}
+.incl .band .chk svg{width:12px;height:12px;display:block}
+.incl .band .label{color:var(--red)}
+.mapcards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;flex:1;min-width:0}
+.mapcard{padding:22px 16px 8px 0;border-right:1px solid var(--line);display:flex;flex-direction:column;min-width:0}
+.mapcard +.mapcard{padding-left:16px}
+.mapcards .mapcard:last-child{border-right:0;padding-right:0}
+.mapcard .badge{font:500 11px/1.35 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
+.mapcard h3{font:800 clamp(34px,3.8vw,56px)/.85 var(--cond);margin:10px 0 12px;letter-spacing:-.01em;overflow-wrap:anywhere}
+.mapcard .desc{color:#3a3b38;font-size:15px;line-height:1.45}
+.mapcard .inc{margin-top:auto;padding-top:16px;display:flex;align-items:flex-start;gap:8px;color:var(--ink);font:500 11px/1.35 var(--mono);letter-spacing:.04em;text-transform:uppercase}
+.mapcard .inc .tick{width:18px;height:18px;border-radius:50%;background:var(--red);color:var(--paper);display:grid;place-items:center;flex:none;margin-top:1px}
+.mapcard .inc .tick svg{width:10px;height:10px;display:block}
+.mapcard .bar{height:4px;background:var(--line);margin-top:16px;position:relative;overflow:hidden}
+.mapcard .bar i{position:absolute;inset:0;background:var(--red)}
+.laterg{display:grid;grid-template-columns:1fr;gap:12px;min-width:0}
+.mapcard.is-next{border:1px dashed rgba(32,33,31,.3);background:var(--paper2);padding:20px 18px 16px;opacity:.86}
+.mapcard.is-next .badge{color:var(--mute)}
+.mapcard.is-next h3{color:transparent;-webkit-text-stroke:1.4px var(--mute);paint-order:stroke fill}
+.mapcard.is-next .out{margin-top:auto;padding-top:14px;color:var(--mute);font:500 11px/1.4 var(--mono);letter-spacing:.04em;text-transform:uppercase}
+@media (max-width:1200px){
+  .maptrack{grid-template-columns:1fr}
+  .laterg{grid-template-columns:1fr 1fr}
+}
+@media (max-width:860px){
+  .maptrack{grid-template-columns:1fr;gap:28px}
+  .incl{border:0;background:transparent;padding:0}
+  .incl .band{border-bottom:0;padding:0 0 14px 30px;margin:0}
+  .mapcards{grid-template-columns:1fr;position:relative;border-left:2px solid var(--ink);margin-left:10px;padding-left:20px}
+  .mapcards::before{content:"";position:absolute;left:-6px;top:-2px;width:10px;height:10px;border-radius:50%;background:var(--red)}
+  .mapcard,.mapcard +.mapcard,.mapcards .mapcard:last-child{padding:18px 0 18px 0;border-right:0;border-bottom:1px solid var(--line)}
+  .mapcards .mapcard:last-child{border-bottom:0}
+  .mapcard{position:relative}
+  .mapcard::before{content:"";position:absolute;left:-26px;top:26px;width:10px;height:10px;border-radius:50%;background:var(--red);box-shadow:0 0 0 3px var(--paper)}
+  .laterg{grid-template-columns:1fr;gap:0;border-left:2px dashed rgba(32,33,31,.32);margin-left:10px;padding-left:20px}
+  .mapcard.is-next{border:0;border-bottom:1px solid var(--line);background:transparent;padding:18px 0;opacity:1}
+  .laterg .mapcard.is-next:last-child{border-bottom:0}
+  .mapcard.is-next{position:relative}
+  .mapcard.is-next::before{content:"";position:absolute;left:-26px;top:26px;width:10px;height:10px;border-radius:50%;background:transparent;border:2px solid var(--mute);box-shadow:0 0 0 3px var(--paper)}
+  .mapcard.is-next h3{-webkit-text-stroke:1.3px #5c5b56;color:transparent}
+}
+
+/* compact lifetime row in the offer ticket */
+.life{margin:0 0 22px;border:1.5px solid var(--ink);background:#fff;border-radius:2px;padding:14px 14px 12px}
+.life .lifeh{font:700 15px/1.35 var(--sans);margin-bottom:12px}
+.lifecols{display:grid;grid-template-columns:1fr;gap:0}
+.lifecols div{display:flex;align-items:flex-start;gap:8px;min-width:0;padding:10px 0;border-top:1px solid var(--line)}
+.lifecols div:first-child{border-top:0;padding-top:2px}
+.decide-end{justify-content:flex-end}
+.lifecols .tick{width:18px;height:18px;border-radius:50%;background:var(--red);color:var(--paper);display:grid;place-items:center;flex:none;margin-top:1px}
+.lifecols .tick svg{width:10px;height:10px;display:block}
+.lifecols b{display:block;font:800 16px/1 var(--cond);letter-spacing:.02em}
+.lifecols span{display:block;font:500 11px/1.3 var(--mono);color:var(--mute);letter-spacing:.04em;text-transform:uppercase;margin-top:4px}
+.life .subnote{margin-top:10px;padding-top:10px;border-top:1px dashed var(--line);color:var(--mute);font:500 12px/1.4 var(--mono);letter-spacing:.03em}
+@media (max-width:860px){
+  .lifecols{grid-template-columns:1fr}
+  .lifecols div{border-top:0;border-bottom:1px solid var(--line);padding:10px 0}
+  .lifecols div:last-child{border-bottom:0}
+}
 
 /* OFFER */
 .offer{background:var(--ink);color:var(--paper);padding-block:var(--secL);position:relative;overflow:hidden}
@@ -364,8 +418,7 @@ footer .wrap{align-items:center}
   .mods .n{font-size:34px;grid-row:span 2}
   .mods .tags{justify-self:start;gap:14px}
   .modsum{gap:18px 28px;margin-top:0}
-  .road{grid-template-columns:1fr}
-  .road>div,.road>div+div{padding:22px 0 18px;border-right:0;border-bottom:1px solid var(--line)}
+
   .price{font-size:120px}
   details p{padding-right:0}
   .end .btn{width:100%;justify-content:center}
@@ -416,7 +469,7 @@ footer .wrap{align-items:center}
             <a class="btn" href="https://www.aiqbiz.com/founding-edition-checkout">Join the Builders <span class="arr">→</span></a>
             <a class="tlink" href="https://www.aiqbiz.com/free-starter">Start with modules 1–3 free</a>
           </div>
-          <p class="micro" data-hero>38 lessons · one-time payment · lifetime access · founder price for the first 300 members</p>
+          <p class="micro" data-hero>38 lessons · one-time payment · BUILD available now · GROW December 1, 2026 · MONETIZE December 15, 2026</p>
         </div>
       </div>
     </div>
@@ -560,14 +613,60 @@ footer .wrap{align-items:center}
       <li data-r><span class="n">05</span><h3>Getting the Image You Want</h3><span class="tags"><span class="lc">5 lessons</span><span class="pill label">Full access</span></span></li>
       <li data-r><span class="n">06</span><h3>The Language of Video</h3><span class="tags"><span class="lc">6 lessons</span><span class="pill label">Full access</span></span></li>
     </ol>
-    <div class="road">
-      <div data-r><span class="label">Available now</span><h3>BUILD</h3><p>Create an AI creator, develop consistent visuals, and learn the workflow behind images and video. This is the first build, and the current course foundation.</p><div class="bar"><i></i></div></div>
-      <div class="later" data-r><span class="label">Coming next</span><h3>GROW</h3><p>How content can become reach, attention and a repeatable growth system, once that work is ready.</p></div>
-      <div class="later" data-r><span class="label">Coming next</span><h3>MONETIZE</h3><p>Connecting content, audience and offer into a business model, when the material is developed and tested.</p></div>
+  </div>
+</section>
+
+
+<!-- ROADMAP -->
+<section class="map" id="roadmap" aria-label="Course roadmap">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="label" data-r>Build 08 · The roadmap</span>
+      <h2 data-r>Five stages.<br><em>Three of them for life.</em></h2>
     </div>
-    <p class="label" style="margin-top:22px;color:var(--mute)">No dates are attached to the later stages.</p>
-    <div class="decide" data-r>
-      <p>Modules 4 to 6, 16 lessons, and every later course addition are included in the Founding Edition.</p>
+    <p class="maplede" data-r>$97 once: all six BUILD modules now, GROW on December 1, MONETIZE on December 15, 2026, and every update to these three stages.</p>
+    <div class="maptrack" data-r>
+      <div class="incl">
+        <div class="band">
+          <span class="chk"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.15 12.05 2.4 8.3l1.4-1.4 2.35 2.35 6.05-6.15 1.4 1.4z"/></svg></span>
+          <span class="label">Your Founder Lifetime Access</span>
+        </div>
+        <div class="mapcards">
+          <article class="mapcard">
+            <span class="badge">Available now</span>
+            <h3>BUILD</h3>
+            <p class="desc">Create an AI creator, develop consistent visuals, and learn the workflow behind images and video. This is the first build, and the current course foundation.</p>
+            <p class="inc"><span class="tick"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.15 12.05 2.4 8.3l1.4-1.4 2.35 2.35 6.05-6.15 1.4 1.4z"/></svg></span><span>Included in Founding Edition · Lifetime</span></p>
+            <div class="bar"><i></i></div>
+          </article>
+          <article class="mapcard">
+            <span class="badge">December 1, 2026</span>
+            <h3>GROW</h3>
+            <p class="desc">How content can become reach, attention and a repeatable growth system, once that work is ready.</p>
+            <p class="inc"><span class="tick"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.15 12.05 2.4 8.3l1.4-1.4 2.35 2.35 6.05-6.15 1.4 1.4z"/></svg></span><span>Included in Founding Edition · Lifetime</span></p>
+          </article>
+          <article class="mapcard">
+            <span class="badge">December 15, 2026</span>
+            <h3>MONETIZE</h3>
+            <p class="desc">Connecting content, audience and offer into a business model, when the material is developed and tested.</p>
+            <p class="inc"><span class="tick"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.15 12.05 2.4 8.3l1.4-1.4 2.35 2.35 6.05-6.15 1.4 1.4z"/></svg></span><span>Included in Founding Edition · Lifetime</span></p>
+          </article>
+        </div>
+      </div>
+      <div class="laterg">
+        <article class="mapcard is-next">
+          <span class="badge">In progress</span>
+          <h3>ADVANCED</h3>
+          <p class="out">Not part of the Founding Edition</p>
+        </article>
+        <article class="mapcard is-next">
+          <span class="badge">In progress</span>
+          <h3>AUTOMATE</h3>
+          <p class="out">Not part of the Founding Edition</p>
+        </article>
+      </div>
+    </div>
+    <div class="decide decide-end" data-r>
       <div class="ctas"><a class="btn" href="https://www.aiqbiz.com/founding-edition-checkout">Join the Builders <span class="arr">→</span></a><a class="tlink" href="https://www.aiqbiz.com/free-starter">Start with modules 1–3 free</a></div>
     </div>
   </div>
@@ -576,7 +675,7 @@ footer .wrap{align-items:center}
 <!-- TEAM -->
 <section class="team wrap" id="team" aria-label="The people behind AIQbiz">
   <div class="sechead">
-    <span class="label" data-r>Build 08 · The people behind AIQbiz</span>
+    <span class="label" data-r>Build 09 · The people behind AIQbiz</span>
     <h2 data-r>Two founders.<br><em>One course.</em></h2>
   </div>
   <div class="tgrid">
@@ -605,9 +704,9 @@ footer .wrap{align-items:center}
 <section class="offer" id="offer">
   <div class="wrap ogrid">
     <div>
-      <span class="label" style="color:#e7776d" data-r>Build 09 · The offer</span>
-      <h2 style="margin-top:14px" data-r>One course. One payment. <em>Lifetime access.</em></h2>
-      <p class="intro" data-r>Join the AIQbiz Builders while the course is being built in the open. The Founding Edition is a single course with lifetime access. Pay once and follow the course as the available material grows. An AI creator is the first build; GROW and MONETIZE follow.</p>
+      <span class="label" style="color:#e7776d" data-r>Build 10 · The offer</span>
+      <h2 style="margin-top:14px" data-r>Pay once.<br><em>Three stages for life.</em></h2>
+      <p class="intro" data-r>Join the AIQbiz Builders while the course is being built in the open. $97 once: all six BUILD modules now, GROW on December 1, MONETIZE on December 15, 2026, and every update to these three stages.</p>
       <ol class="stack" data-r>
         <li><span>01</span><div><b>Modules 4 to 6 · 16 lessons</b>What Your Soul ID Can Do, Getting the Image You Want, The Language of Video. Plus the 22 free lessons in modules 1–3: 38 lessons in total.</div></li>
         <li><span>02</span><div><b>The real working material</b>Real prompts, exact steps, settings, tests, mistakes and fixes.</div></li>
@@ -617,14 +716,22 @@ footer .wrap{align-items:center}
     </div>
     <div class="ticket" data-r>
       <span class="label">AIQbiz Builders · Founding Edition</span>
-      <h3>One-time · lifetime course access</h3>
+      <h3>Lifetime access: BUILD, GROW &amp; MONETIZE</h3>
       <div class="price"><sup>$</sup>97</div>
-      <p class="sub">One-time payment. No other price is offered here.</p>
+      <p class="sub">$97 once + every update to these three stages. No other price is offered here.</p>
       <p class="founder">The first 300 founding members are manually tracked. No countdowns or timers. The price may increase later, and a subscription model may follow.</p>
+      <div class="life" data-r>
+        <p class="lifeh">Lifetime access: BUILD, GROW &amp; MONETIZE + every update to these three stages</p>
+        <div class="lifecols">
+          <div><span class="tick"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.15 12.05 2.4 8.3l1.4-1.4 2.35 2.35 6.05-6.15 1.4 1.4z"/></svg></span><div><b>BUILD</b><span>Available now</span></div></div>
+          <div><span class="tick"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.15 12.05 2.4 8.3l1.4-1.4 2.35 2.35 6.05-6.15 1.4 1.4z"/></svg></span><div><b>GROW</b><span>December 1, 2026</span></div></div>
+          <div><span class="tick"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.15 12.05 2.4 8.3l1.4-1.4 2.35 2.35 6.05-6.15 1.4 1.4z"/></svg></span><div><b>MONETIZE</b><span>December 15, 2026</span></div></div>
+        </div>
+        <p class="subnote">ADVANCED &amp; AUTOMATE: in progress, not part of the Founding Edition</p>
+      </div>
       <ul>
         <li>One-time payment of $97</li>
-        <li>Lifetime access to the course</li>
-        <li>Full access from module 4 onward, with later course additions included automatically</li>
+        <li>All six BUILD modules now, GROW on December 1, MONETIZE on December 15, 2026, and every update to these three stages</li>
         <li>Modules 1–3 available free through the separate starter path</li>
       </ul>
       <a class="btn" href="https://www.aiqbiz.com/founding-edition-checkout">Join the Builders <span class="arr">→</span></a>
@@ -637,16 +744,16 @@ footer .wrap{align-items:center}
 <!-- FAQ -->
 <section class="faq wrap" id="faq">
   <div class="fgrid">
-    <div><span class="label red" data-r>Build 10 · Questions</span><h2 style="margin-top:14px" data-r>Clear <em>before you join.</em></h2></div>
+    <div><span class="label red" data-r>Build 11 · Questions</span><h2 style="margin-top:14px" data-r>Clear <em>before you join.</em></h2></div>
     <div>
-      <details><summary>What do I get for $97?<span class="pm"></span></summary><p>The Founding Edition is one course with lifetime access. It includes full access from module 4 onward, while modules 1–3 are available through the free path. Later course additions are included automatically for paid members.</p></details>
-      <details><summary>What is available now?<span class="pm"></span></summary><p>BUILD is the current stage. The current course path covers Welcome to AIQbiz, The AI Creator Landscape, Your First Build, What Your Soul ID Can Do, Getting the Image You Want, and The Language of Video. GROW and MONETIZE are coming later.</p></details>
+      <details><summary>What do I get for $97?<span class="pm"></span></summary><p>$97 once: all six BUILD modules now, GROW on December 1, MONETIZE on December 15, 2026, and every update to these three stages. Modules 1–3 are also available through the free path. ADVANCED and AUTOMATE are in progress and are not part of the Founding Edition.</p></details>
+      <details><summary>What is available now?<span class="pm"></span></summary><p>BUILD is available now. The current course path covers Welcome to AIQbiz, The AI Creator Landscape, Your First Build, What Your Soul ID Can Do, Getting the Image You Want, and The Language of Video. GROW follows on December 1, 2026 and MONETIZE on December 15, 2026. Both are included in the Founding Edition.</p></details>
       <details><summary>Do I have to show my face?<span class="pm"></span></summary><p>No. The point of the course is an AI creator who is the face of your content, the way Ava and Ethan are. You stay behind the camera.</p></details>
       <details><summary>Are the first three modules really free?<span class="pm"></span></summary><p>Yes. The separate free product provides access to modules 1–3. The signup step asks for your name and email, then sends you to the course.</p></details>
       <details><summary>Do I need Higgsfield or ElevenLabs?<span class="pm"></span></summary><p>The source workflows use Higgsfield for images, video and Soul ID, and ElevenLabs for a designed creator voice. Provider accounts and their changing costs are separate from AIQbiz.</p></details>
       <details><summary>Is there a countdown or a spots-left counter?<span class="pm"></span></summary><p>No. The first 300 founding members are manually tracked. AIQbiz does not use a public counter or a timer. The price may increase later, and a subscription model may follow.</p></details>
-      <details><summary>Is this a finished course?<span class="pm"></span></summary><p>No. It is a growing course. BUILD is available now; later stages are labeled as coming and are not presented as finished or dated. Later course additions are included automatically for paid members.</p></details>
-      <details><summary>Will this make me money?<span class="pm"></span></summary><p>AIQbiz is an educational course. No earnings claims, guarantees or invented results are made. BUILD teaches you to create the creator; GROW and MONETIZE are the later stages.</p></details>
+      <details><summary>Is this a finished course?<span class="pm"></span></summary><p>No. It is a growing course. BUILD is available now, GROW follows on December 1, 2026, and MONETIZE on December 15, 2026. Founding members get every update to these three stages. ADVANCED and AUTOMATE are in progress and are not part of the Founding Edition.</p></details>
+      <details><summary>Will this make me money?<span class="pm"></span></summary><p>AIQbiz is an educational course. No earnings claims, guarantees or invented results are made. BUILD teaches you to create the creator; GROW follows on December 1, 2026 and MONETIZE on December 15, 2026.</p></details>
     </div>
   </div>
 </section>
@@ -654,10 +761,10 @@ footer .wrap{align-items:center}
 <!-- END -->
 <section class="end">
   <div class="wrap">
-    <span class="label" data-r>Build 11 · AIQbiz Builders</span>
+    <span class="label" data-r>Build 12 · AIQbiz Builders</span>
     <h2 data-r>Start with<br><em>the first build.</em></h2>
     <div class="row">
-      <p data-r>Follow the process, use the prompt, inspect the result, and make the next decision. Begin free, or join the Builders with lifetime access.</p>
+      <p data-r>Follow the process, use the prompt, inspect the result, and make the next decision. Begin free, or join the Builders with lifetime access to BUILD, GROW and MONETIZE.</p>
       <div class="ctas" data-r>
         <a class="btn" href="https://www.aiqbiz.com/founding-edition-checkout">Join the Builders <span class="arr">→</span></a>
         <a class="tlink" href="https://www.aiqbiz.com/free-starter">Start modules 1–3 free</a>
@@ -667,7 +774,7 @@ footer .wrap{align-items:center}
 </section>
 </main>
 
-<div class="mbar" id="mbar" aria-label="Join the Builders"><div class="p">$97<small>one-time · lifetime access</small></div><a class="btn" href="https://www.aiqbiz.com/founding-edition-checkout">Join the Builders</a></div>
+<div class="mbar" id="mbar" aria-label="Join the Builders"><div class="p">$97<small>one-time · BUILD, GROW &amp; MONETIZE</small></div><a class="btn" href="https://www.aiqbiz.com/founding-edition-checkout">Join the Builders</a></div>
 
 <footer>
   <div class="wrap">
