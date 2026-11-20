@@ -37,6 +37,19 @@ jobs:
                           continue
                       out.write_bytes(b)
                       print("extracted", out, len(b))
+          # split sources: assets-b64/parts/<name>.b64.partN are joined in order
+          parts_dir = src / "parts"
+          groups = {}
+          for p in sorted(parts_dir.glob("*.b64.part*")) if parts_dir.exists() else []:
+              groups.setdefault(p.name.rsplit(".part", 1)[0], []).append(p)
+          for name, ps in groups.items():
+              ps.sort(key=lambda q: int(q.name.rsplit(".part", 1)[1]))
+              data = base64.b64decode("".join("".join(q.read_text().split()) for q in ps))
+              out = dest / name[:-4]
+              if out.exists() and out.read_bytes() == data:
+                  continue
+              out.write_bytes(data)
+              print("joined", out, len(data), "from", len(ps), "parts")
           for p in sorted(src.glob("*.b64")):
               if p.name.endswith(".tar.b64"):
                   continue
