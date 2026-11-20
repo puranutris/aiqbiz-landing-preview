@@ -1,17 +1,22 @@
-name: Materialize image assets
+name: Materialize binary assets
 on:
   workflow_dispatch:
   push:
     branches: ["main"]
 permissions:
   contents: write
+concurrency:
+  group: materialize
+  cancel-in-progress: false
 jobs:
   materialize:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Decode JPEGs and commit
+        with:
+          ref: main
+      - name: Decode assets and commit
         run: |
           python3 - <<'PY'
           from pathlib import Path
@@ -19,18 +24,35 @@ jobs:
           src = Path("assets-b64")
           dest = Path("assets")
           dest.mkdir(exist_ok=True)
+          import tarfile, io
+          for p in sorted(src.glob("*.tar.b64")):
+              data = base64.b64decode("".join(p.read_text().split()))
+              with tarfile.open(fileobj=io.BytesIO(data)) as t:
+                  for m in t.getmembers():
+                      if not m.isfile() or "/" in m.name or m.name.startswith("."):
+                          continue
+                      out = dest / m.name
+                      b = t.extractfile(m).read()
+                      if out.exists() and out.read_bytes() == b:
+                          continue
+                      out.write_bytes(b)
+                      print("extracted", out, len(b))
           for p in sorted(src.glob("*.b64")):
+              if p.name.endswith(".tar.b64"):
+                  continue
               out = dest / p.name[:-4]
               data = base64.b64decode("".join(p.read_text().split()))
+              if out.exists() and out.read_bytes() == data:
+                  continue
               out.write_bytes(data)
               print("wrote", out, len(data))
           PY
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/*.jpg
+          git add assets
           if git diff --cached --quiet; then
-            echo "No JPEG changes to commit"
+            echo "No asset changes to commit"
             exit 0
           fi
-          git commit -m "Add decoded JPEG assets for the landing preview"
-          git push
+          git commit -m "Decode binary assets for the landing preview"
+          for i in 1 2 3; do git pull --rebase origin main && git push && break; sleep 5; done
