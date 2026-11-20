@@ -174,6 +174,12 @@ a{color:inherit}
 .mods h3{font:600 clamp(26px,2.6vw,38px)/1.05 var(--cond);text-transform:uppercase}
 .mods .pill{border:1px solid var(--ink);padding:7px 12px;border-radius:40px;white-space:nowrap}
 .mods .pill.free{background:var(--ink);color:var(--paper)}
+.mods .tags{display:flex;align-items:center;gap:18px;justify-self:end}
+.mods .lc{font:500 14px/1 var(--mono);color:#3a3b38;white-space:nowrap}
+.modsum{display:flex;gap:clamp(24px,4vw,64px);flex-wrap:wrap;margin:-8px 0 28px;align-items:baseline}
+.modsum div{display:flex;align-items:baseline;gap:12px}
+.modsum b{font:800 clamp(48px,5vw,76px)/.85 var(--cond)}
+.modsum span{font-size:16px;color:#3a3b38;max-width:200px;line-height:1.35}
 .road{display:grid;grid-template-columns:1.3fr 1fr 1fr;margin-top:64px;border-top:1px solid var(--ink)}
 .road>div{padding:26px 26px 10px 0;border-right:1px solid var(--line)}
 .road>div+div{padding-left:26px}
@@ -318,7 +324,8 @@ footer .wrap{align-items:center}
   .pair figcaption span{text-align:left}
   .mods li{grid-template-columns:52px 1fr;gap:6px 12px}
   .mods .n{font-size:34px;grid-row:span 2}
-  .mods .pill{justify-self:start}
+  .mods .tags{justify-self:start;gap:14px}
+  .modsum{gap:18px 28px;margin-top:0}
   .road{grid-template-columns:1fr}
   .road>div,.road>div+div{padding:22px 0 18px;border-right:0;border-bottom:1px solid var(--line)}
   .price{font-size:120px}
@@ -368,7 +375,7 @@ footer .wrap{align-items:center}
             <a class="btn" href="https://www.aiqbiz.com/founding-edition-checkout">Get lifetime access · $97 <span class="arr">→</span></a>
             <a class="tlink" href="https://www.aiqbiz.com/free-starter">Start with modules 1–3 free</a>
           </div>
-          <p class="micro" data-hero>One-time payment · lifetime access · founder price for the first 300 members</p>
+          <p class="micro" data-hero>38 lessons · one-time payment · lifetime access · founder price for the first 300 members</p>
         </div>
       </div>
     </div>
@@ -497,13 +504,14 @@ footer .wrap{align-items:center}
     <div class="sechead">
       <h2 data-r>Start free.<br><em>Unlock the rest once.</em></h2>
     </div>
+    <div class="modsum" data-r><div><b>38</b><span>lessons in the current BUILD path</span></div><div><b>22</b><span>free in modules 1–3</span></div><div><b>16</b><span>in modules 4–6, with full access</span></div></div>
     <ol class="mods">
-      <li data-r><span class="n">01</span><h3>Welcome to AIQbiz</h3><span class="pill free label">Free</span></li>
-      <li data-r><span class="n">02</span><h3>The AI Creator Landscape</h3><span class="pill free label">Free</span></li>
-      <li data-r><span class="n">03</span><h3>Your First Build</h3><span class="pill free label">Free</span></li>
-      <li data-r><span class="n">04</span><h3>What Your Soul ID Can Do</h3><span class="pill label">Full access</span></li>
-      <li data-r><span class="n">05</span><h3>Getting the Image You Want</h3><span class="pill label">Full access</span></li>
-      <li data-r><span class="n">06</span><h3>The Language of Video</h3><span class="pill label">Full access</span></li>
+      <li data-r><span class="n">01</span><h3>Welcome to AIQbiz</h3><span class="tags"><span class="lc">6 lessons</span><span class="pill free label">Free</span></span></li>
+      <li data-r><span class="n">02</span><h3>The AI Creator Landscape</h3><span class="tags"><span class="lc">5 lessons</span><span class="pill free label">Free</span></span></li>
+      <li data-r><span class="n">03</span><h3>Your First Build</h3><span class="tags"><span class="lc">11 lessons</span><span class="pill free label">Free</span></span></li>
+      <li data-r><span class="n">04</span><h3>What Your Soul ID Can Do</h3><span class="tags"><span class="lc">5 lessons</span><span class="pill label">Full access</span></span></li>
+      <li data-r><span class="n">05</span><h3>Getting the Image You Want</h3><span class="tags"><span class="lc">5 lessons</span><span class="pill label">Full access</span></span></li>
+      <li data-r><span class="n">06</span><h3>The Language of Video</h3><span class="tags"><span class="lc">6 lessons</span><span class="pill label">Full access</span></span></li>
     </ol>
     <div class="road">
       <div data-r><span class="label">Available now</span><h3>BUILD</h3><p>Create an AI creator, develop consistent visuals, and learn the workflow behind images and video. This is the current course foundation.</p><div class="bar"><i></i></div></div>
@@ -512,7 +520,7 @@ footer .wrap{align-items:center}
     </div>
     <p class="label" style="margin-top:22px;color:var(--mute)">No dates are attached to the later stages.</p>
     <div class="decide" data-r>
-      <p>Modules 4 to 6 and every later course addition are included in the Founding Edition.</p>
+      <p>Modules 4 to 6, 16 lessons, and every later course addition are included in the Founding Edition.</p>
       <div class="ctas"><a class="btn" href="https://www.aiqbiz.com/founding-edition-checkout">Get lifetime access · $97 <span class="arr">→</span></a><a class="tlink" href="https://www.aiqbiz.com/free-starter">Start with modules 1–3 free</a></div>
     </div>
   </div>
@@ -526,7 +534,7 @@ footer .wrap{align-items:center}
       <h2 style="margin-top:14px" data-r>One course. One payment. <em>Lifetime access.</em></h2>
       <p class="intro" data-r>Come in while the Build Lab is being built in the open. The Founding Edition is a single course with lifetime access. Pay once and follow the course as the available material grows.</p>
       <ol class="stack" data-r>
-        <li><span>01</span><div><b>Modules 4 to 6</b>What Your Soul ID Can Do, Getting the Image You Want, The Language of Video.</div></li>
+        <li><span>01</span><div><b>Modules 4 to 6 · 16 lessons</b>What Your Soul ID Can Do, Getting the Image You Want, The Language of Video. Plus the 22 free lessons in modules 1–3: 38 lessons in total.</div></li>
         <li><span>02</span><div><b>The real working material</b>Real prompts, exact steps, settings, tests, mistakes and fixes.</div></li>
         <li><span>03</span><div><b>Two documented case studies</b>Ava Pearson and Ethan Cole, from brief to image to motion.</div></li>
       </ol>
