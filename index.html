@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AIQbiz: AI, IQ, Business. Build your AI creator.</title>
+<title>AIQbiz · Build your AI creator.</title>
 <meta name="description" content="AIQbiz is a practical course for building AI creators: real prompts, exact steps, settings, tests, mistakes and fixes, with Ava Pearson and Ethan Cole as working case studies.">
 <meta name="robots" content="noindex">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/puranutris/aiqbiz-landing-preview@b08dffaf969198371c9071a2f37bae490fcdf765/assets/mark.svg" type="image/svg+xml">
@@ -50,13 +50,13 @@ a{color:inherit}
 .nav .btn{padding:12px 18px;font-size:14px;gap:0}
 
 /* HERO */
-.hero{background:var(--ink);color:var(--paper);min-height:100svh;position:relative;overflow:hidden;padding-top:68px}
-.hero .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(24px,4vw,72px);align-items:end;min-height:calc(100svh - 68px);padding-block:clamp(28px,5vh,64px)}
-.hero h1{font:800 clamp(78px,13.2vw,226px)/.82 var(--cond);text-transform:uppercase;letter-spacing:-.01em}
+.hero{background:var(--ink);color:var(--paper);position:relative;overflow:hidden;padding-top:68px}
+.hero .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(24px,4vw,72px);align-items:center;min-height:min(calc(100svh - 68px),860px);padding-block:clamp(20px,3vh,36px) clamp(28px,4vh,48px)}
+.hero h1{font:800 clamp(64px,10.4vw,184px)/.84 var(--cond);text-transform:uppercase;letter-spacing:-.01em}
 .hero h1 .ln{display:block;overflow:hidden;padding-bottom:.04em}
 .hero h1 .ln>span{display:inline-block}
 .hero h1 .q{color:var(--red)}
-.hero h1 small{font:400 .3em/1 var(--serif);font-style:italic;text-transform:none;letter-spacing:0;vertical-align:.95em;margin-left:.25em;color:rgba(244,243,239,.62)}
+.hero h1 em{display:block;font:italic 400 .36em/1.1 var(--serif);margin-top:.04em;text-transform:none;letter-spacing:0;color:rgba(244,243,239,.9)}
 .hero .kicker{display:flex;gap:14px;align-items:center;margin-bottom:clamp(20px,3vh,36px);color:rgba(244,243,239,.7)}
 .hero .kicker i{width:38px;height:1px;background:var(--red)}
 .hero .lede{margin-top:clamp(22px,3.4vh,40px);display:grid;grid-template-columns:minmax(0,560px) auto;gap:28px;align-items:end}
@@ -65,7 +65,8 @@ a{color:inherit}
 .hero .ctas{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin-top:28px}
 .hero .ctas .tlink{color:var(--paper)}
 .hero .ctas .tlink:hover{color:#e7776d}
-.stage{position:relative;justify-self:end;width:min(100%,420px)}
+.stage{position:relative;justify-self:end;width:min(100%,400px)}
+.stage .frame{max-height:calc(100svh - 140px)}
 .stage .frame{position:relative;aspect-ratio:9/14;overflow:hidden;border-radius:2px;background:#111}
 .stage video,.stage .frame img{width:100%;height:100%;object-fit:cover}
 .stage .tag{position:absolute;left:0;bottom:0;right:0;padding:14px 16px;display:flex;justify-content:space-between;align-items:end;background:linear-gradient(transparent,rgba(20,20,19,.78));color:var(--paper)}
@@ -80,33 +81,6 @@ a{color:inherit}
 .scrollcue span{display:block;width:1px;height:40px;background:rgba(244,243,239,.3);position:relative;overflow:hidden}
 .scrollcue span::after{content:"";position:absolute;left:0;top:-40%;width:1px;height:40%;background:var(--red);animation:cue 1.8s infinite}
 @keyframes cue{to{top:100%}}
-
-/* marquee */
-.marq{background:var(--red);color:var(--paper);overflow:hidden;white-space:nowrap;border-block:1px solid #a12f26}
-.marq .track{display:inline-flex;animation:marq 38s linear infinite;will-change:transform}
-.marq span{font:700 clamp(28px,3.4vw,46px)/1 var(--cond);text-transform:uppercase;padding:16px 0;letter-spacing:.02em}
-.marq span em{font:italic 400 1em/1 var(--serif);text-transform:none;letter-spacing:0;padding:0 .5em;opacity:.85}
-@keyframes marq{to{transform:translateX(-50%)}}
-
-/* NAME / decode (pinned) */
-.decode{position:relative;background:var(--paper)}
-.decode .pin{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-block:96px 64px}
-.decode .top{display:flex;justify-content:space-between;align-items:baseline;gap:24px;border-bottom:1px solid var(--line);padding-bottom:18px}
-.decode .top h2{font:400 clamp(28px,3vw,44px)/1.05 var(--serif)}
-.eq{display:flex;align-items:baseline;justify-content:center;flex-wrap:nowrap;font:800 clamp(64px,15vw,260px)/.9 var(--cond);text-transform:uppercase;margin:clamp(28px,6vh,70px) 0;letter-spacing:-.01em;white-space:nowrap}
-.eq>span{display:inline-block;overflow:hidden}
-.eq .plus{color:var(--mute);font-weight:500;padding:0 .12em}
-.eq .q{color:var(--red)}
-.eq .biz{position:relative}
-.eq .biz .lo{position:absolute;left:0;bottom:0;opacity:0;text-transform:none}
-.eq .dup{color:var(--red)}
-.cols{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
-.cols article{padding:26px 28px 6px 0;border-right:1px solid var(--line)}
-.cols article+article{padding-left:28px}
-.cols article:last-child{border-right:0}
-.cols .big{font:800 54px/1 var(--cond);display:flex;align-items:baseline;gap:12px;margin-bottom:10px}
-.cols .big small{font:italic 400 24px/1 var(--serif);color:var(--mute)}
-.cols p{color:#3a3b38;max-width:400px}
 
 /* facts / counters */
 .facts{background:var(--ink);color:var(--paper)}
@@ -256,7 +230,7 @@ details[open] summary .pm::after{transform:rotate(0)}
 details p{padding:0 40px 24px 0;color:#3a3b38;max-width:680px}
 
 /* END */
-.end{background:var(--red);color:var(--paper);padding-block:clamp(80px,14vh,170px) 0;overflow:hidden}
+.end{background:var(--red);color:var(--paper);padding-block:clamp(80px,14vh,170px);overflow:hidden}
 .end h2{font:800 clamp(64px,12vw,210px)/.84 var(--cond);text-transform:uppercase}
 .end h2 em{font:italic 400 .7em/1 var(--serif);text-transform:none}
 .end .row{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-top:40px}
@@ -265,14 +239,16 @@ details p{padding:0 40px 24px 0;color:#3a3b38;max-width:680px}
 .end .btn:hover{background:#000}
 .end .ctas{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
 .end .tlink:hover{color:var(--ink)}
-.giant{font:800 clamp(120px,27vw,470px)/.74 var(--cond);letter-spacing:-.02em;margin-top:clamp(60px,10vh,120px);white-space:nowrap;color:rgba(32,33,31,.92);transform:translateY(.08em)}
-.giant b{color:var(--paper);font-weight:800}
 footer{background:var(--ink);color:rgba(244,243,239,.7);padding-block:34px;font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
 footer nav{display:flex;gap:22px;flex-wrap:wrap}
 footer a{text-decoration:none}
 footer a:hover{color:var(--paper)}
 footer .disc{max-width:640px}
+footer .fbrand{display:flex;align-items:center;gap:10px;text-decoration:none;font:800 26px/1 var(--cond);color:var(--paper);flex:0 0 auto}
+footer .fbrand b{color:var(--red);font-weight:800}
+footer .fbrand img{width:26px;height:26px}
+footer .wrap{align-items:center}
 
 /* reveal base (only when JS animation is active) */
 .anim [data-r]{opacity:0;transform:translateY(34px)}
@@ -291,20 +267,14 @@ footer .disc{max-width:640px}
   .nav .btn{padding:11px 14px;font-size:13px}
   .nav .btn .long{display:none}
   .hero{padding-top:60px}
-  .hero .wrap{grid-template-columns:1fr;min-height:auto;align-items:start;padding-block:36px 48px;gap:34px}
-  .hero h1{font-size:clamp(76px,25vw,150px)}
-  .hero h1 small{display:block;font-size:.27em;margin:.35em 0 0;vertical-align:0}
+  .hero .wrap{grid-template-columns:1fr;min-height:auto;align-items:start;padding-block:18px 40px;gap:28px}
+  .hero h1{font-size:clamp(58px,17.5vw,120px)}
+  .hero h1 em{display:block;font-size:.42em;margin-top:.2em}
   .hero .lede{grid-template-columns:1fr}
   .stage{justify-self:stretch;width:100%;max-width:none}
   .stage .frame{aspect-ratio:4/5}
   .stage .side,.scrollcue{display:none}
   .stage .mini{left:auto;right:12px;top:12px;bottom:auto;width:32%;border-width:4px}
-  .decode .pin{min-height:auto;padding-block:72px 56px}
-  .decode .top{flex-direction:column;gap:8px}
-  .eq{font-size:clamp(40px,13.4vw,110px)}
-  .cols{grid-template-columns:1fr}
-  .cols article,.cols article+article{border-right:0;padding:22px 0 18px;border-bottom:1px solid var(--line)}
-  .cols article:last-child{border-bottom:0}
   .facts .wrap{grid-template-columns:1fr 1fr}
   .fact,.fact:first-child{padding:28px 16px 26px 0;border-left:0;border-top:1px solid var(--lineD)}
   .fact:nth-child(even){padding-left:16px;border-left:1px solid var(--lineD)}
@@ -342,7 +312,6 @@ footer .disc{max-width:640px}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
-  .marq .track{transform:none}
 }
 </style>
 </head>
@@ -352,15 +321,14 @@ footer .disc{max-width:640px}
   <div class="wrap">
     <a class="brand" href="#top" aria-label="AIQbiz home"><img src="https://cdn.jsdelivr.net/gh/puranutris/aiqbiz-landing-preview@b08dffaf969198371c9071a2f37bae490fcdf765/assets/mark.svg" alt=""><span>AI<b>Q</b>biz</span></a>
     <ul>
-      <li><a href="#name">The name</a></li>
-      <li><a href="#cast">Ava & Ethan</a></li>
+      <li><a href="#cast">Ava and Ethan</a></li>
       <li><a href="#method">Method</a></li>
       <li><a href="#path">Course</a></li>
       <li><a href="#offer">Offer</a></li>
     </ul>
     <div class="right">
       <a class="tlink login" href="https://www.aiqbiz.com/login">Login</a>
-      <a class="btn" href="https://www.aiqbiz.com/founding-edition-checkout"><span class="long">Get lifetime access ·&nbsp;</span>$97</a>
+      <a class="btn" href="https://www.aiqbiz.com/founding-edition-checkout"><span class="long">Get lifetime access · </span>$97</a>
     </div>
   </div>
 </header>
@@ -368,18 +336,17 @@ footer .disc{max-width:640px}
 <main id="top">
 <!-- HERO -->
 <section class="hero">
-  <div class="scrollcue label">Scroll <span></span></div>
   <div class="wrap">
     <div>
       <div class="kicker label" data-hero><i></i>AI Influencer Build Lab · Founding Edition</div>
-      <h1 aria-label="AI. IQ. Business.">
-        <span class="ln"><span>AI.</span></span>
-        <span class="ln"><span class="q">IQ.</span><small>intelligence, applied</small></span>
-        <span class="ln"><span>Business.</span></span>
+      <h1>
+        <span class="ln"><span>Build your</span></span>
+        <span class="ln"><span class="q">AI creator.</span></span>
+        <span class="ln"><span><em>Consistent. Faceless. For your business.</em></span></span>
       </h1>
       <div class="lede">
         <div>
-          <p data-hero><em>Build your AI creator.</em> A practical course for building AI creators and AI influencers through real prompts, exact steps, settings, tests, mistakes and fixes, with Ava Pearson and Ethan Cole as working case studies.</p>
+          <p data-hero>A practical course for building AI creators and AI influencers through real prompts, exact steps, settings, tests, mistakes and fixes, with Ava Pearson and Ethan Cole as working case studies.</p>
           <div class="ctas" data-hero>
             <a class="btn" href="https://www.aiqbiz.com/founding-edition-checkout">Get lifetime access · $97 <span class="arr">→</span></a>
             <a class="tlink" href="https://www.aiqbiz.com/free-starter">Start with modules 1–3 free</a>
@@ -394,29 +361,6 @@ footer .disc{max-width:640px}
         <div class="tag"><div><strong>Ava Pearson</strong><span class="label">Case-study avatar</span></div><span class="label rec">AI-generated</span></div>
       </div>
       <div class="mini"><video class="vid" src="https://cdn.jsdelivr.net/gh/puranutris/aiqbiz-landing-preview@b08dffaf969198371c9071a2f37bae490fcdf765/assets/ethan-loop.mp4" poster="https://cdn.jsdelivr.net/gh/puranutris/aiqbiz-landing-preview@b08dffaf969198371c9071a2f37bae490fcdf765/assets/ethan-loop-poster.webp" muted loop playsinline preload="metadata" aria-label="Ethan Cole, AI-generated case-study avatar"></video></div>
-    </div>
-  </div>
-</section>
-
-<div class="marq" aria-hidden="true"><div class="track">
-  <span>Brief <em>before</em> Base image <em>then</em> Soul ID <em>then</em> Image <em>then</em> Motion <em>then</em> Test <em>then</em> Fix <em>then</em> Repeat <em>·</em>&nbsp;</span>
-  <span>Brief <em>before</em> Base image <em>then</em> Soul ID <em>then</em> Image <em>then</em> Motion <em>then</em> Test <em>then</em> Fix <em>then</em> Repeat <em>·</em>&nbsp;</span>
-</div></div>
-
-<!-- NAME -->
-<section class="decode" id="name">
-  <div class="pin wrap">
-    <div class="top">
-      <span class="label red">The name is the method</span>
-      <h2>Three ideas. <span class="it">One word.</span></h2>
-    </div>
-    <div class="eq" aria-label="AI plus IQ plus Biz equals AIQbiz">
-      <span class="a">A</span><span class="i1">I</span><span class="plus p1">+</span><span class="dup">I</span><span class="q">Q</span><span class="plus p2">+</span><span class="biz"><span class="up">BIZ</span><span class="lo">biz</span></span>
-    </div>
-    <div class="cols">
-      <article data-r><div class="big">AI <small>the tools</small></div><p>Higgsfield for images, video and Soul ID. ElevenLabs for a designed creator voice. Used with intent, not collected.</p></article>
-      <article data-r><div class="big red">IQ <small>the judgement</small></div><p>Brief before you generate. Keep the useful result, name the deviation, change one thing and run the next deliberate test.</p></article>
-      <article data-r><div class="big">BIZ <small>the point</small></div><p>Built on ~20 years of entrepreneurship. The creator is designed to serve a business: purpose, audience, positioning, point of view.</p></article>
     </div>
   </div>
 </section>
@@ -613,12 +557,12 @@ footer .disc{max-width:640px}
       </div>
     </div>
   </div>
-  <div class="giant" aria-hidden="true"><span class="gtrack">AI<b>Q</b>biz AI<b>Q</b>biz</span></div>
 </section>
 </main>
 
 <footer>
   <div class="wrap">
+    <a class="fbrand" href="#top" aria-label="AIQbiz home"><img src="https://cdn.jsdelivr.net/gh/puranutris/aiqbiz-landing-preview@b08dffaf969198371c9071a2f37bae490fcdf765/assets/mark.svg" alt=""><span>AI<b>Q</b>biz</span></a>
     <p class="disc">AIQbiz is an educational course. No earnings claims, guarantees or invented results are made. Tool accounts and tool costs are separate. Ava Pearson and Ethan Cole are AI-generated.</p>
     <nav><a href="https://www.aiqbiz.com/login">Login</a><a href="https://www.aiqbiz.com/contact">Contact</a><a href="https://www.aiqbiz.com/imprint">Imprint</a><a href="https://www.aiqbiz.com/privacy">Privacy</a><a href="https://www.aiqbiz.com/terms">Terms</a></nav>
   </div>
@@ -692,7 +636,6 @@ footer .disc{max-width:640px}
   // HERO kinetic type
   var tl=gsap.timeline({defaults:{ease:'power4.out'}});
   tl.from('.hero h1 .ln>span',{yPercent:110,duration:1.1,stagger:.12})
-    .from('.hero h1 small',{opacity:0,x:-20,duration:.8},'-=.5')
     .from('[data-hero]',{opacity:0,y:30,duration:.9,stagger:.1},'-=.7')
     .from('.stage .frame',{clipPath:'inset(100% 0 0 0)',duration:1.2,ease:'expo.out'},'<')
     .from('.stage .mini',{opacity:0,y:40,duration:.8},'-=.6');
@@ -703,21 +646,6 @@ footer .disc{max-width:640px}
   gsap.utils.toArray('[data-r]').forEach(function(el){
     gsap.to(el,{opacity:1,y:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%',once:true}});
   });
-
-  // NAME equation: AI + IQ + BIZ  ->  AIQbiz
-  var mm=gsap.matchMedia();
-  function eqTl(pin){
-    var t=gsap.timeline({scrollTrigger:{trigger:'.decode',start:pin?'top top':'top 70%',end:pin?'+=120%':'center 35%',scrub:.6,pin:pin?'.decode .pin':false}});
-    t.to('.eq .plus',{width:0,opacity:0,paddingLeft:0,paddingRight:0,duration:1},0)
-     .to('.eq .dup',{width:0,opacity:0,duration:1},.25)
-     .to('.eq .biz .up',{opacity:0,duration:.4},.8)
-     .to('.eq .biz .lo',{opacity:1,duration:.4},.8)
-     .to('.eq .q',{scale:1.08,transformOrigin:'50% 80%',duration:.4},1.1)
-     .to('.eq .q',{scale:1,duration:.3},1.5);
-    return t;
-  }
-  mm.add('(min-width:861px)',function(){ eqTl(true); });
-  mm.add('(max-width:860px)',function(){ eqTl(false); });
 
   // counters
   gsap.utils.toArray('.cnt').forEach(function(el){
@@ -764,9 +692,6 @@ footer .disc{max-width:640px}
 
   // price punch
   gsap.from('.price',{yPercent:30,opacity:0,duration:1,ease:'back.out(1.6)',scrollTrigger:{trigger:'.ticket',start:'top 75%',once:true}});
-
-  // giant wordmark drift
-  gsap.fromTo('.gtrack',{xPercent:0},{xPercent:-30,ease:'none',scrollTrigger:{trigger:'.end',start:'top bottom',end:'bottom bottom',scrub:true}});
 
   window.addEventListener('load',function(){ ScrollTrigger.refresh(); });
   setTimeout(function(){ ScrollTrigger.refresh(); },1200);
