@@ -8,6 +8,7 @@
 <meta name="robots" content="noindex">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/puranutris/aiqbiz-landing-preview@b08dffaf969198371c9071a2f37bae490fcdf765/assets/mark.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preload" as="image" href="https://cdn.jsdelivr.net/gh/puranutris/aiqbiz-landing-preview@b08dffaf969198371c9071a2f37bae490fcdf765/assets/ava-loop-poster.webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
@@ -56,13 +57,15 @@ a{color:inherit}
 .hero h1 .ln{display:block;overflow:hidden;padding-bottom:.04em}
 .hero h1 .ln>span{display:inline-block}
 .hero h1 .q{color:var(--red)}
-.hero h1 em{display:block;font:italic 400 .36em/1.1 var(--serif);margin-top:.04em;text-transform:none;letter-spacing:0;color:rgba(244,243,239,.9)}
-.hero .kicker{display:flex;gap:14px;align-items:center;margin-bottom:clamp(20px,3vh,36px);color:rgba(244,243,239,.7)}
+.hero h1 .ln.sub{font-size:.36em;line-height:1.08;padding-top:.22em}
+.hero h1 em{display:block;font:italic 400 1em/1.08 var(--serif);text-transform:none;letter-spacing:0;color:rgba(244,243,239,.9)}
+.hero .kicker{display:flex;gap:14px;align-items:center;margin-bottom:clamp(20px,3vh,36px);color:rgba(244,243,239,.82)}
 .hero .kicker i{width:38px;height:1px;background:var(--red)}
 .hero .lede{margin-top:clamp(22px,3.4vh,40px);display:grid;grid-template-columns:minmax(0,560px) auto;gap:28px;align-items:end}
 .hero .lede p{font-size:clamp(17px,1.35vw,20px);color:rgba(244,243,239,.82);max-width:560px}
 .hero .lede p em{font:italic 400 1.28em/1.15 var(--serif);color:var(--paper)}
 .hero .ctas{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin-top:28px}
+.hero .micro{margin-top:16px;font-size:14px;max-width:600px;color:rgba(244,243,239,.72)}
 .hero .ctas .tlink{color:var(--paper)}
 .hero .ctas .tlink:hover{color:#e7776d}
 .stage{position:relative;justify-self:end;width:min(100%,400px)}
@@ -74,7 +77,7 @@ a{color:inherit}
 .stage .rec{display:flex;align-items:center;gap:7px}
 .stage .rec::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--red);animation:blink 1.6s infinite}
 @keyframes blink{50%{opacity:.25}}
-.stage .side{position:absolute;left:-46px;top:0;writing-mode:vertical-rl;transform:rotate(180deg);color:rgba(244,243,239,.55)}
+.stage .side{position:absolute;left:-46px;top:0;writing-mode:vertical-rl;transform:rotate(180deg);color:rgba(244,243,239,.7)}
 .stage .mini{position:absolute;left:-34%;bottom:12%;width:44%;aspect-ratio:9/13;overflow:hidden;border:6px solid var(--ink);border-radius:2px}
 .stage .mini video{width:100%;height:100%;object-fit:cover}
 .scrollcue{position:absolute;right:var(--pad);top:96px;color:rgba(244,243,239,.55);display:flex;gap:10px;align-items:center}
@@ -82,21 +85,12 @@ a{color:inherit}
 .scrollcue span::after{content:"";position:absolute;left:0;top:-40%;width:1px;height:40%;background:var(--red);animation:cue 1.8s infinite}
 @keyframes cue{to{top:100%}}
 
-/* facts / counters */
-.facts{background:var(--ink);color:var(--paper)}
-.facts .wrap{display:grid;grid-template-columns:repeat(5,1fr);}
-.fact{padding:44px 22px 38px;border-left:1px solid var(--lineD)}
-.fact:first-child{border-left:0;padding-left:0}
-.fact .n{font:800 clamp(56px,6.4vw,104px)/.9 var(--cond);display:block}
-.fact .n .u{color:var(--red)}
-.fact p{margin-top:12px;color:rgba(244,243,239,.72);font-size:15px;max-width:220px}
-
 /* CAST */
 .cast{padding-block:clamp(80px,12vh,150px) 40px;overflow:hidden}
 .sechead{display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,4vw,80px);align-items:end;margin-bottom:clamp(36px,6vh,72px)}
 .sechead .label{color:var(--red);padding-bottom:14px}
 .sechead h2{font:800 clamp(52px,7.6vw,128px)/.88 var(--cond);text-transform:uppercase;letter-spacing:-.005em}
-.sechead h2 em{font:italic 400 .82em/1 var(--serif);text-transform:none;letter-spacing:0;color:var(--red)}
+.sechead h2 em{font:italic 400 .82em/1 var(--serif);text-transform:none;letter-spacing:0}
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,48px)}
 .card{position:relative}
 .card .media{position:relative;aspect-ratio:4/5;overflow:hidden;background:#ddd}
@@ -125,7 +119,7 @@ a{color:inherit}
 .mgrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,5vw,90px)}
 .msticky{position:sticky;top:110px;align-self:start}
 .msticky h2{font:800 clamp(48px,6vw,96px)/.9 var(--cond);text-transform:uppercase}
-.msticky h2 em{display:block;font:italic 400 .62em/1.1 var(--serif);text-transform:none;color:var(--red);margin-top:10px}
+.msticky h2 em{display:block;font:italic 400 .62em/1.1 var(--serif);text-transform:none;margin-top:10px}
 .msticky p{margin-top:22px;max-width:440px;color:#3a3b38}
 .msticky .imgbox{margin-top:30px;aspect-ratio:16/10;overflow:hidden;position:relative}
 .msticky .imgbox img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .6s}
@@ -143,19 +137,19 @@ a{color:inherit}
 .prompt{background:var(--ink);color:var(--paper);padding-block:clamp(80px,12vh,140px)}
 .pgrid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(30px,5vw,90px);align-items:start}
 .pgrid h2{font:800 clamp(46px,5.6vw,88px)/.9 var(--cond);text-transform:uppercase}
-.pgrid h2 em{font:italic 400 .8em/1 var(--serif);text-transform:none;color:#e7776d}
+.pgrid h2 em{font:italic 400 .8em/1 var(--serif);text-transform:none}
 .pgrid .side p{margin-top:22px;color:rgba(244,243,239,.75);max-width:420px}
 .pgrid .worlds{margin-top:30px;aspect-ratio:16/9;overflow:hidden}
 .pgrid .worlds img{width:100%;height:100%;object-fit:cover}
 .term{border:1px solid var(--lineD);border-radius:2px;background:#191a18}
-.term .bar{display:flex;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--lineD);color:rgba(244,243,239,.55)}
+.term .bar{display:flex;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--lineD);color:rgba(244,243,239,.72)}
 .term pre{font:400 15px/1.7 var(--mono);white-space:pre-wrap;word-break:break-word;padding:22px 22px 26px;min-height:15.5em;color:#ecebe5}
 .term pre .at{color:#e7776d}
 .term .caret{display:inline-block;width:.55em;height:1.05em;background:var(--red);vertical-align:-.15em;animation:blink 1s steps(1) infinite}
 .term .specs{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--lineD)}
 .term .specs div{padding:14px 16px;border-left:1px solid var(--lineD)}
 .term .specs div:first-child{border-left:0}
-.term .specs .label{color:rgba(244,243,239,.5);display:block;margin-bottom:4px}
+.term .specs .label{color:rgba(244,243,239,.68);display:block;margin-bottom:4px}
 .term .specs b{font:500 14px/1.3 var(--mono)}
 
 /* PROOF */
@@ -218,7 +212,7 @@ a{color:inherit}
 .faq{padding-block:clamp(80px,12vh,140px)}
 .fgrid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(30px,5vw,90px)}
 .fgrid h2{font:800 clamp(48px,5.6vw,88px)/.9 var(--cond);text-transform:uppercase}
-.fgrid h2 em{font:italic 400 .8em/1 var(--serif);text-transform:none;color:var(--red)}
+.fgrid h2 em{font:italic 400 .8em/1 var(--serif);text-transform:none}
 details{border-bottom:1px solid var(--line)}
 details:first-child{border-top:1px solid var(--ink)}
 summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;padding:22px 0;font:600 clamp(22px,2vw,28px)/1.15 var(--cond);text-transform:uppercase}
@@ -250,15 +244,42 @@ footer .fbrand b{color:var(--red);font-weight:800}
 footer .fbrand img{width:26px;height:26px}
 footer .wrap{align-items:center}
 
+
+/* proof strip intro (directly under hero) */
+.strip.first{padding-block:clamp(56px,9vh,110px) clamp(56px,9vh,110px)}
+.strip.first .head{align-items:end;margin-bottom:34px}
+.strip.first .head h2{font:800 clamp(46px,6vw,100px)/.88 var(--cond);text-transform:uppercase}
+.strip.first .head h2 em{font:italic 400 .8em/1 var(--serif);text-transform:none}
+.strip.first .head p{color:#3a3b38;font-size:17px;max-width:460px}
+/* inline decision CTA */
+.decide{display:flex;justify-content:space-between;align-items:center;gap:28px;flex-wrap:wrap;margin-top:clamp(40px,6vh,64px);padding-top:26px;border-top:1px solid var(--ink)}
+.decide p{font:400 clamp(22px,2vw,30px)/1.2 var(--serif);max-width:640px}
+.decide .ctas{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+/* value stack */
+.stack{list-style:none;margin-top:34px;border-top:1px solid var(--lineD);max-width:560px}
+.stack li{display:grid;grid-template-columns:40px 1fr;gap:12px;padding:16px 0;border-bottom:1px solid var(--lineD);color:rgba(244,243,239,.86)}
+.stack li span{font:500 13px/1.6 var(--mono);color:#e7776d}
+.stack li b{display:block;font:700 22px/1.1 var(--cond);text-transform:uppercase;color:var(--paper);margin-bottom:4px;letter-spacing:.01em}
+.ticket .founder{margin:0 0 22px;padding:14px 16px;border-left:3px solid var(--red);background:var(--paper2);font-size:15px;line-height:1.5}
+/* sticky mobile CTA */
+.mbar{display:none}
+@media (max-width:860px){
+  .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;align-items:center;justify-content:space-between;gap:14px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:var(--ink);color:var(--paper);border-top:1px solid var(--lineD);transform:translateY(110%);transition:transform .35s}
+  .mbar.on{transform:none}
+  .mbar .p{font:800 30px/1 var(--cond)}
+  .mbar .p small{display:block;font:400 12px/1.3 var(--sans);color:rgba(244,243,239,.75);margin-top:2px}
+  .mbar .btn{padding:15px 18px;font-size:15px;flex:1;justify-content:center;max-width:250px}
+  footer{padding-bottom:96px}
+  .decide .ctas{width:100%;flex-direction:column;align-items:stretch;text-align:center}
+  .decide .btn{justify-content:center}
+  .strip.first .head{align-items:start}
+}
+
 /* reveal base (only when JS animation is active) */
 .anim [data-r]{opacity:0;transform:translateY(34px)}
 
 @media (max-width:1100px){
   .nav ul{display:none}
-  .facts .wrap{grid-template-columns:repeat(3,1fr)}
-  .fact:nth-child(4){border-left:0;padding-left:0}
-  .fact{border-top:1px solid var(--lineD)}
-  .fact:nth-child(-n+3){border-top:0}
 }
 @media (max-width:860px){
   body{font-size:16px}
@@ -269,18 +290,13 @@ footer .wrap{align-items:center}
   .hero{padding-top:60px}
   .hero .wrap{grid-template-columns:1fr;min-height:auto;align-items:start;padding-block:18px 40px;gap:28px}
   .hero h1{font-size:clamp(58px,17.5vw,120px)}
-  .hero h1 em{display:block;font-size:.42em;margin-top:.2em}
+  .hero h1 .ln.sub{font-size:.42em}
+  .hero .kicker i{display:none}
   .hero .lede{grid-template-columns:1fr}
   .stage{justify-self:stretch;width:100%;max-width:none}
   .stage .frame{aspect-ratio:4/5}
   .stage .side,.scrollcue{display:none}
   .stage .mini{left:auto;right:12px;top:12px;bottom:auto;width:32%;border-width:4px}
-  .facts .wrap{grid-template-columns:1fr 1fr}
-  .fact,.fact:first-child{padding:28px 16px 26px 0;border-left:0;border-top:1px solid var(--lineD)}
-  .fact:nth-child(even){padding-left:16px;border-left:1px solid var(--lineD)}
-  .fact:nth-child(-n+2){border-top:0}
-  .fact:nth-child(5){grid-column:1/-1}
-  .fact .n{font-size:64px}
   .sechead{grid-template-columns:1fr;gap:10px}
   .sechead .label{padding-bottom:0}
   .duo{grid-template-columns:1fr;gap:56px}
@@ -321,10 +337,11 @@ footer .wrap{align-items:center}
   <div class="wrap">
     <a class="brand" href="#top" aria-label="AIQbiz home"><img src="https://cdn.jsdelivr.net/gh/puranutris/aiqbiz-landing-preview@b08dffaf969198371c9071a2f37bae490fcdf765/assets/mark.svg" alt=""><span>AI<b>Q</b>biz</span></a>
     <ul>
-      <li><a href="#cast">Ava and Ethan</a></li>
-      <li><a href="#method">Method</a></li>
-      <li><a href="#path">Course</a></li>
+      <li><a href="#proof">Proof</a></li>
+      <li><a href="#method">What you learn</a></li>
+      <li><a href="#path">Modules</a></li>
       <li><a href="#offer">Offer</a></li>
+      <li><a href="#faq">FAQ</a></li>
     </ul>
     <div class="right">
       <a class="tlink login" href="https://www.aiqbiz.com/login">Login</a>
@@ -342,15 +359,16 @@ footer .wrap{align-items:center}
       <h1>
         <span class="ln"><span>Build your</span></span>
         <span class="ln"><span class="q">AI creator.</span></span>
-        <span class="ln"><span><em>Consistent. Faceless. For your business.</em></span></span>
+        <span class="ln sub"><span><em>Consistent. Faceless. For your business.</em></span></span>
       </h1>
       <div class="lede">
         <div>
-          <p data-hero>A practical course for building AI creators and AI influencers through real prompts, exact steps, settings, tests, mistakes and fixes, with Ava Pearson and Ethan Cole as working case studies.</p>
+          <p data-hero>Give your business a recognisable face that never has to be yours: one AI creator who stays the same person in every image and every clip. A practical course with real prompts, exact steps, settings, tests, mistakes and fixes, with Ava Pearson and Ethan Cole as working case studies.</p>
           <div class="ctas" data-hero>
             <a class="btn" href="https://www.aiqbiz.com/founding-edition-checkout">Get lifetime access · $97 <span class="arr">→</span></a>
             <a class="tlink" href="https://www.aiqbiz.com/free-starter">Start with modules 1–3 free</a>
           </div>
+          <p class="micro" data-hero>One-time payment · lifetime access · founder price for the first 300 members</p>
         </div>
       </div>
     </div>
@@ -358,47 +376,17 @@ footer .wrap{align-items:center}
       <span class="side label">Case study 01</span>
       <div class="frame">
         <video class="vid" src="https://cdn.jsdelivr.net/gh/puranutris/aiqbiz-landing-preview@b08dffaf969198371c9071a2f37bae490fcdf765/assets/ava-loop.mp4" poster="https://cdn.jsdelivr.net/gh/puranutris/aiqbiz-landing-preview@b08dffaf969198371c9071a2f37bae490fcdf765/assets/ava-loop-poster.webp" muted loop playsinline preload="metadata" aria-label="Ava Pearson, AI-generated case-study avatar, short motion loop"></video>
-        <div class="tag"><div><strong>Ava Pearson</strong><span class="label">Case-study avatar</span></div><span class="label rec">AI-generated</span></div>
+        <div class="tag"><div><strong>Ava Pearson</strong><span class="label">Built in the course</span></div><span class="label rec">AI-generated</span></div>
       </div>
       <div class="mini"><video class="vid" src="https://cdn.jsdelivr.net/gh/puranutris/aiqbiz-landing-preview@b08dffaf969198371c9071a2f37bae490fcdf765/assets/ethan-loop.mp4" poster="https://cdn.jsdelivr.net/gh/puranutris/aiqbiz-landing-preview@b08dffaf969198371c9071a2f37bae490fcdf765/assets/ethan-loop-poster.webp" muted loop playsinline preload="metadata" aria-label="Ethan Cole, AI-generated case-study avatar"></video></div>
     </div>
   </div>
 </section>
 
-<!-- FACTS -->
-<section class="facts" aria-label="Course facts">
-  <div class="wrap">
-    <div class="fact" data-r><span class="n">~<span class="cnt" data-to="20">20</span></span><p>years of entrepreneurship behind the AIQbiz way of working</p></div>
-    <div class="fact" data-r><span class="n"><span class="cnt" data-to="6">6</span></span><p>modules on the current BUILD path</p></div>
-    <div class="fact" data-r><span class="n"><span class="cnt" data-to="3">3</span></span><p>modules free through the starter path</p></div>
-    <div class="fact" data-r><span class="n"><span class="cnt" data-to="1">1</span></span><p>payment. Lifetime access to the course</p></div>
-    <div class="fact" data-r><span class="n"><span class="u">$</span><span class="cnt" data-to="97">97</span></span><p>one-time, Founding Edition</p></div>
-  </div>
-</section>
-
-<!-- CAST -->
-<section class="cast wrap" id="cast">
-  <div class="sechead">
-    <span class="label" data-r>The case studies</span>
-    <h2 data-r>Two creators.<br><em>Two ways to think.</em></h2>
-  </div>
-  <div class="duo">
-    <article class="card a">
-      <div class="media"><video class="vid par" src="https://cdn.jsdelivr.net/gh/puranutris/aiqbiz-landing-preview@b08dffaf969198371c9071a2f37bae490fcdf765/assets/ava-studio-loop.mp4" poster="https://cdn.jsdelivr.net/gh/puranutris/aiqbiz-landing-preview@b08dffaf969198371c9071a2f37bae490fcdf765/assets/ava-studio-loop-poster.webp" muted loop playsinline preload="none" aria-label="Ava Pearson motion clip"></video><div class="name">Ava</div></div>
-      <div class="meta" data-r><span class="label">Pearson</span><div><h3>Creative, expressive, experimental.</h3><p>Her work shows the discovery path from a visual starting point to a recognisable creator.</p></div></div>
-    </article>
-    <article class="card e">
-      <div class="media"><video class="vid par" src="https://cdn.jsdelivr.net/gh/puranutris/aiqbiz-landing-preview@b08dffaf969198371c9071a2f37bae490fcdf765/assets/ethan-out-loop.mp4" poster="https://cdn.jsdelivr.net/gh/puranutris/aiqbiz-landing-preview@b08dffaf969198371c9071a2f37bae490fcdf765/assets/ethan-out-loop-poster.webp" muted loop playsinline preload="none" aria-label="Ethan Cole motion clip"></video><div class="name">Ethan</div></div>
-      <div class="meta" data-r><span class="label">Cole</span><div><h3>Calm, analytical, strategic.</h3><p>His work shows the design path from a defined concept to a grounded character.</p></div></div>
-    </article>
-  </div>
-  <p class="note" data-r>Ava and Ethan are AI-generated digital hosts created through real production work. You see the process: <b>the brief, the references, the prompt, the test, the deviation and the next decision.</b></p>
-</section>
-
-<section class="strip" aria-label="Same face, different scenes">
+<section class="strip first" id="proof" aria-label="Same face, different scenes">
   <div class="wrap head">
-    <h3 data-r>Same face. <span class="red">Different rooms.</span></h3>
-    <p data-r>A repeatable identity: references, base images and Soul ID, so the same creator can move through different scenes and formats.</p>
+    <h2 data-r>Same face.<br><em>Every scene.</em></h2>
+    <p data-r>This is what you learn to build. References, base images and Soul ID, so the same creator can move through different scenes and formats. Every image below is Ava or Ethan, made in the course.</p>
   </div>
   <div class="reel" id="reel">
     <figure><img src="https://cdn.jsdelivr.net/gh/puranutris/aiqbiz-landing-preview@b08dffaf969198371c9071a2f37bae490fcdf765/assets/ava_nat_01.webp" alt="Ava, neutral front view at a desk" loading="lazy" width="900" height="1612"><figcaption class="label">Ava · desk</figcaption></figure>
@@ -413,11 +401,32 @@ footer .wrap{align-items:center}
   </div>
 </section>
 
+<!-- CAST -->
+<section class="cast wrap" id="cast">
+  <div class="sechead">
+    <span class="label" data-r>The case studies</span>
+    <h2 data-r>Two creators.<br><em>Every step shown.</em></h2>
+  </div>
+  <div class="duo">
+    <article class="card a">
+      <div class="media"><video class="vid par" src="https://cdn.jsdelivr.net/gh/puranutris/aiqbiz-landing-preview@b08dffaf969198371c9071a2f37bae490fcdf765/assets/ava-studio-loop.mp4" poster="https://cdn.jsdelivr.net/gh/puranutris/aiqbiz-landing-preview@b08dffaf969198371c9071a2f37bae490fcdf765/assets/ava-studio-loop-poster.webp" muted loop playsinline preload="none" aria-label="Ava Pearson motion clip"></video><div class="name">Ava</div></div>
+      <div class="meta" data-r><span class="label">Pearson</span><div><h3>Creative, expressive, experimental.</h3><p>Her work shows the discovery path from a visual starting point to a recognisable creator.</p></div></div>
+    </article>
+    <article class="card e">
+      <div class="media"><video class="vid par" src="https://cdn.jsdelivr.net/gh/puranutris/aiqbiz-landing-preview@b08dffaf969198371c9071a2f37bae490fcdf765/assets/ethan-out-loop.mp4" poster="https://cdn.jsdelivr.net/gh/puranutris/aiqbiz-landing-preview@b08dffaf969198371c9071a2f37bae490fcdf765/assets/ethan-out-loop-poster.webp" muted loop playsinline preload="none" aria-label="Ethan Cole motion clip"></video><div class="name">Ethan</div></div>
+      <div class="meta" data-r><span class="label">Cole</span><div><h3>Calm, analytical, strategic.</h3><p>His work shows the design path from a defined concept to a grounded character.</p></div></div>
+    </article>
+  </div>
+  <p class="note" data-r>Ava and Ethan are AI-generated digital hosts created through real production work. You see the process: <b>the brief, the references, the prompt, the test, the deviation and the next decision.</b></p>
+  <p data-r style="margin-top:14px;color:var(--mute);font-size:15px;max-width:640px">Their development is used as a case study, not as a promise of what your own project will do.</p>
+</section>
+
+
 <!-- METHOD -->
 <section class="method" id="method">
   <div class="wrap mgrid">
     <div class="msticky">
-      <span class="label red">Inside the lab</span>
+      <span class="label red">What you will be able to do</span>
       <h2 style="margin-top:14px">Less tool collecting. <em>More controlled experiments.</em></h2>
       <p>Follow a working sequence from idea to image to motion. See the practical decision behind each step, including the parts that did not work first time.</p>
       <div class="imgbox">
@@ -430,7 +439,7 @@ footer .wrap{align-items:center}
     </div>
     <ol class="steps">
       <li data-cap="Creator brief · course material"><span class="num">01</span><div><span class="label">Think</span><h3>Plan the creator</h3><p>Clarify who the creator is, who they speak to, and what they should stand for. Purpose, audience, positioning, point of view, communication style and visual direction, before you generate.</p></div></li>
-      <li data-cap="Base image → refined identity · course material"><span class="num">02</span><div><span class="label">Make</span><h3>Build the visual system</h3><p>Create a base image, refine the identity, and work toward consistent images with Soul ID.</p></div></li>
+      <li data-cap="Base image → refined identity · course material"><span class="num">02</span><div><span class="label">Make</span><h3>Build the visual system</h3><p>Create a base image, refine the identity, and work toward consistent images with Soul ID, so the same face holds across scenes.</p></div></li>
       <li data-cap="Ava Walks Through the Worlds · still"><span class="num">03</span><div><span class="label">Direct</span><h3>Direct the movement</h3><p>Use camera language, timelines, references and prompts to shape a clip rather than leave every choice to the model.</p></div></li>
       <li data-cap="Ava · studio scene"><span class="num">04</span><div><span class="label">Learn</span><h3>Review, adjust, repeat</h3><p>Keep the useful result, name the deviation, change one thing, and run the next deliberate test.</p></div></li>
     </ol>
@@ -460,9 +469,8 @@ footer .wrap{align-items:center}
 </section>
 
 <!-- PROOF -->
-<section class="proof wrap" id="proof">
+<section class="proof wrap" id="test">
   <div class="sechead">
-    <span class="label" data-r>Useful friction</span>
     <h2 data-r>Mistakes stay<br><em>in the lesson.</em></h2>
   </div>
   <div class="pair">
@@ -477,13 +485,16 @@ footer .wrap{align-items:center}
       <figcaption><b>The next decision</b><span>Name the deviation, change one thing, run the next deliberate test.</span></figcaption>
     </figure>
   </div>
+  <div class="decide" data-r>
+    <p>When a result drifts, the next move is part of the learning. That is the skill you are paying for.</p>
+    <div class="ctas"><a class="btn" href="https://www.aiqbiz.com/founding-edition-checkout">Get lifetime access · $97 <span class="arr">→</span></a></div>
+  </div>
 </section>
 
 <!-- PATH -->
 <section class="path" id="path">
   <div class="wrap">
     <div class="sechead">
-      <span class="label" data-r>A clear place to begin</span>
       <h2 data-r>Start free.<br><em>Unlock the rest once.</em></h2>
     </div>
     <ol class="mods">
@@ -500,6 +511,10 @@ footer .wrap{align-items:center}
       <div class="later" data-r><span class="label">Coming next</span><h3>MONETIZE</h3><p>Connecting content, audience and offer into a business model, when the material is developed and tested.</p></div>
     </div>
     <p class="label" style="margin-top:22px;color:var(--mute)">No dates are attached to the later stages.</p>
+    <div class="decide" data-r>
+      <p>Modules 4 to 6 and every later course addition are included in the Founding Edition.</p>
+      <div class="ctas"><a class="btn" href="https://www.aiqbiz.com/founding-edition-checkout">Get lifetime access · $97 <span class="arr">→</span></a><a class="tlink" href="https://www.aiqbiz.com/free-starter">Start with modules 1–3 free</a></div>
+    </div>
   </div>
 </section>
 
@@ -509,7 +524,12 @@ footer .wrap{align-items:center}
     <div>
       <span class="label" style="color:#e7776d" data-r>The offer</span>
       <h2 style="margin-top:14px" data-r>One course. One payment. <em>Lifetime access.</em></h2>
-      <p class="intro" data-r>Come in while the Build Lab is being built in the open. Pay once and follow the course as the available material grows.</p>
+      <p class="intro" data-r>Come in while the Build Lab is being built in the open. The Founding Edition is a single course with lifetime access. Pay once and follow the course as the available material grows.</p>
+      <ol class="stack" data-r>
+        <li><span>01</span><div><b>Modules 4 to 6</b>What Your Soul ID Can Do, Getting the Image You Want, The Language of Video.</div></li>
+        <li><span>02</span><div><b>The real working material</b>Real prompts, exact steps, settings, tests, mistakes and fixes.</div></li>
+        <li><span>03</span><div><b>Two documented case studies</b>Ava Pearson and Ethan Cole, from brief to image to motion.</div></li>
+      </ol>
       <div class="bg20" data-r><b>~20</b><p>years of entrepreneurship behind AIQbiz. That is why every lesson ends in a decision you can use in a business, not a trick for a feed.</p></div>
     </div>
     <div class="ticket" data-r>
@@ -517,6 +537,7 @@ footer .wrap{align-items:center}
       <h3>One-time · lifetime course access</h3>
       <div class="price"><sup>$</sup>97</div>
       <p class="sub">One-time payment. No other price is offered here.</p>
+      <p class="founder">The first 300 founding members are manually tracked. No countdowns or timers. The price may increase later, and a subscription model may follow.</p>
       <ul>
         <li>One-time payment of $97</li>
         <li>Lifetime access to the course</li>
@@ -525,22 +546,24 @@ footer .wrap{align-items:center}
       </ul>
       <a class="btn" href="https://www.aiqbiz.com/founding-edition-checkout">Get lifetime access · $97 <span class="arr">→</span></a>
       <p class="alt"><a class="tlink" href="https://www.aiqbiz.com/free-starter">Start with modules 1–3 free</a></p>
-      <p class="fine">This founder price is for the first 300 members, tracked manually. No countdowns or timers. The price may increase later, and a subscription model may follow. Provider accounts and tool costs (Higgsfield, ElevenLabs) are separate from AIQbiz and can change.</p>
+      <p class="fine">Provider accounts and tool costs (Higgsfield, ElevenLabs) are separate from AIQbiz and can change.</p>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="faq wrap">
+<section class="faq wrap" id="faq">
   <div class="fgrid">
     <div><span class="label red" data-r>Questions</span><h2 style="margin-top:14px" data-r>Clear <em>before you join.</em></h2></div>
     <div>
       <details><summary>What do I get for $97?<span class="pm"></span></summary><p>The Founding Edition is one course with lifetime access. It includes full access from module 4 onward, while modules 1–3 are available through the free path. Later course additions are included automatically for paid members.</p></details>
       <details><summary>What is available now?<span class="pm"></span></summary><p>BUILD is the current stage. The current course path covers Welcome to AIQbiz, The AI Creator Landscape, Your First Build, What Your Soul ID Can Do, Getting the Image You Want, and The Language of Video. GROW and MONETIZE are coming later.</p></details>
+      <details><summary>Do I have to show my face?<span class="pm"></span></summary><p>No. The point of the course is an AI creator who is the face of your content, the way Ava and Ethan are. You stay behind the camera.</p></details>
       <details><summary>Are the first three modules really free?<span class="pm"></span></summary><p>Yes. The separate free product provides access to modules 1–3. The signup step asks for your name and email, then sends you to the course.</p></details>
       <details><summary>Do I need Higgsfield or ElevenLabs?<span class="pm"></span></summary><p>The source workflows use Higgsfield for images, video and Soul ID, and ElevenLabs for a designed creator voice. Provider accounts and their changing costs are separate from AIQbiz.</p></details>
       <details><summary>Is there a countdown or a spots-left counter?<span class="pm"></span></summary><p>No. The first 300 founding members are manually tracked. AIQbiz does not use a public counter or a timer. The price may increase later, and a subscription model may follow.</p></details>
-      <details><summary>Is this a finished course?<span class="pm"></span></summary><p>No. It is a growing course. BUILD is available now; later stages are labeled as coming and are not presented as finished or dated.</p></details>
+      <details><summary>Is this a finished course?<span class="pm"></span></summary><p>No. It is a growing course. BUILD is available now; later stages are labeled as coming and are not presented as finished or dated. Later course additions are included automatically for paid members.</p></details>
+      <details><summary>Will this make me money?<span class="pm"></span></summary><p>AIQbiz is an educational course. No earnings claims, guarantees or invented results are made. BUILD teaches you to create the creator; GROW and MONETIZE are the later stages.</p></details>
     </div>
   </div>
 </section>
@@ -559,6 +582,8 @@ footer .wrap{align-items:center}
   </div>
 </section>
 </main>
+
+<div class="mbar" id="mbar" aria-label="Buy the Founding Edition"><div class="p">$97<small>one-time · lifetime access</small></div><a class="btn" href="https://www.aiqbiz.com/founding-edition-checkout">Get lifetime access</a></div>
 
 <footer>
   <div class="wrap">
@@ -604,6 +629,15 @@ footer .wrap{align-items:center}
   var hero = document.querySelector('.hero');
   function navState(){ nav.classList.toggle('solid', window.scrollY > hero.offsetHeight - 80); }
   navState(); window.addEventListener('scroll', navState, {passive:true});
+
+  // sticky mobile CTA: visible after the hero, hidden while another buy button is on screen
+  var mbar=document.getElementById('mbar'), inView=0;
+  function mState(){ mbar.classList.toggle('on', window.scrollY > hero.offsetHeight*0.8 && inView===0); }
+  if('IntersectionObserver' in window){
+    var mo=new IntersectionObserver(function(es){ es.forEach(function(e){ inView+= e.isIntersecting?1:-1; if(inView<0)inView=0; }); mState(); });
+    [].slice.call(document.querySelectorAll('.ticket,.end,footer')).forEach(function(el){ mo.observe(el); });
+  }
+  window.addEventListener('scroll', mState, {passive:true}); mState();
 
   // videos: play only when visible, never under reduced motion
   var vids = [].slice.call(document.querySelectorAll('video.vid'));
